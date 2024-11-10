@@ -1,0 +1,324 @@
+/*
+.btn-home, .btn-player-stats {
+	float: left;
+	display: block;
+	padding: 10px;
+	margin: 5px;
+	width: 200px;
+    background: rgb(235, 244, 252); 
+	border: round;
+}
+*/
+
+	
+.menu-ul {
+	margin: 1rm;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.menu-buttons {
+	float: left;
+	display: block;
+	width: 10%;
+	color: #666;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	border: solid 1px black;
+	margin-bottom: 5px;
+	
+}
+
+.menu-buttons:hover {
+  background-color: #ddd;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+	font-size: 11px;
+}
+
+th{
+    width: 50px;
+	height: 30px;
+}
+
+td {
+    height: 15px;
+    vertical-align: bottom;
+    text-align: center;
+  }
+.playerNames {
+    width: 150px;
+}
+
+.team-selection{
+	margin-bottom: 10px;
+
+}
+
+.home-teams {
+	margin-left: auto;
+	margin-right: auto;
+	float:left;
+	width: 48%;
+	padding: 10px;
+	border: 2px solid black;
+	text-align: center;
+	
+}
+
+.away-teams {
+	margin-left: auto;
+	margin-right: auto;
+	width: 48%;
+	padding: 10px;
+	border: 2px solid black;
+	text-align: center;
+	overflow: hidden;
+}
+
+.home-teams input, .away-teams input {
+	padding: 5px;
+	border-radius: 4px;  /* makes borders round */
+}
+
+.btn-simGame {
+	margin-bottom: 10px;
+}
+
+.team-stats-game{
+	padding-left: 10px;
+	display: flex;
+    justify-content:space-around;
+}
+
+.scoreboard {
+	margin-left: auto;
+	margin-right: auto;
+	float:left;
+	text-align: center;
+	width: 49%;
+	float:left;
+}
+
+.scoreboard2 {
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	text-align: center;
+	width: 48%;
+	overflow: hidden;
+}
+
+.scoreboard3 {
+	margin-left: auto;
+	margin-right: auto;
+	float:left;
+	text-align: center;
+	width: 49%;
+	float:left;
+}
+
+.scoreboard4 {
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	text-align: center;
+	width: 48%;
+	overflow: hidden;
+}
+
+#team-0, #team-1, #team-0-tot, #team-1-tot {
+	font-size: 13px;
+	font-weight: 700;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.perGameLeaders {
+	width: 100%;
+	display: flex;
+    justify-content:space-around;
+}
+
+.leagueLeadersTable {
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 5px;
+}
+
+.ppgtable .rpgtable .apgtable .spgtable .bpgtable {
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.btn-showLeaders {
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.btn-home-active {
+	color:red;
+	background-color: rgba(50,67,33,0.2);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-away-active {
+	color:blue;
+	background-color: rgba(50,67,33,0.2);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* The AWARDS Modal (background) */
+.rosterModal, .playerInfoModal, .modal, .recordModal, .careerStatModal {
+  display: none; /* Hidden by default * - none, lai nerādītu */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.roster-modal-content, .playerInfo-modal-content, .modal-content, .record-modal-content, .careerStat-modal-content {
+
+  background-color: rgb(235,240,236);
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #888;
+  width: 80%;
+  heigth: 500px;
+}
+
+/* The Close Award Modal Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.awardTitle, .careerTotalTitle {
+	text-align: center;
+}
+#rosterTitle, #playerInfoName, #playerInfoOveral {
+	text-align: center;
+}
+
+#MVPwinner, #defensiveWinner, #rookieWinner, #sixManWinner, #mostImprovedWin {
+	width: 20%;
+	font-size: 1rem;
+}
+
+.recordTable, .careerStatTable, .playerGeneralInfoTable, .playerInfoSkillTable, .playerInfoPerGameStats, .playerInfoTotalStats, .playerInfoRecords, .playerInfoDevelopment {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;  
+	border-radius: 10px;
+	margin-top: 15px;
+}
+
+.playerInfoSkillTable, .playerGeneralInfoTable, .playerInfoPerGameStats, .playerInfoTotalStats, .playerInfoRecords, .playerInfoDevelopment {
+	font-size: 1em;
+}
+
+.rosterTable {
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;  
+	border-radius: 10px;
+	margin-top: 15px;
+}
+
+.rosterTable, .recordTable tr, .careerStatTable tr {
+	font-size: 1.2rem;
+}
+
+.record-year {
+	width: 50px;
+}
+
+.record-name {
+	width: 150px;
+}
+
+.record-stat {
+	width: 50px;
+}
+
+.careerStat-name {
+	width: 200px;
+}
+
+.careerStat-stat {
+	width: 100px;
+}
+
+.records-ul, .careerStat-ul {
+	margin: auto;
+	width: 70%;
+	padding: 1px;
+	overflow: hidden;
+	text-align: center;
+}
+
+/* .points-records-button, .offReb-records-button, .defReb-records-button, .rebounds-records-button, .assists-records-button, .steals-records-button, .blocks-records-button, .fgMade-records-button, .threePointer-records-button, .freeThrowMade-records-button, .turnovers-records-button { */
+.records-ul li, .careerStat-ul li {
+	display: inline-flex;
+	width: 20%;
+	color: #666;
+	text-align: center;
+	padding: 5px 5px;
+	border: 1px solid rgb(106, 143, 169);  /* border thickness, style, color */
+	border-radius: 10px;  /* makes borders round */
+	text-decoration: none;
+	font-weight: 900; /* set BOLD thickness */
+	margin-bottom: 5px;
+	justify-content: center;
+}
+
+.records-ul li:hover, .careerStat-ul li:hover {
+  background-color: #ddd;
+}
+
+#roster-row {
+	display: flex;
+	align-items: center; 
+	padding-left: 10px;
+}
+
+#roster-column {
+	margin-left: 20px ;
+	margin-right: 20px;
+}
+
+#logo-roster{
+	width: 12%;
+	align-items: center; 
+}
+.arrow-roster {
+	width: 120%;
+	align-items: center; 
+}
+.roster-name {
+	width: 40%;
+}
+#roster-role {
+	
+}
