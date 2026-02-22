@@ -3,16 +3,29 @@
 	<head>
 		<title>Transporta sistema - Riga</title>
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<meta charset="utf-8" />
 	</head>
-	
 	<body>
-		<ul class="menu-ul">
-			<li class="menu-buttons" onclick="showRoster()">ROSTER</li>
-			<li class="menu-buttons" onclick="showPlayerAwards()">PLAYER AWARDS</li>
-			<li class="menu-buttons" onclick="showRecords()">RECORDS</li>
-			<li class="menu-buttons" onclick="showTotalStats()">TOTAL STATS</li>
-		</ul>
-	
+		<!--  MAIN MENU BUTTONS -->
+		<div id="mainMenu-container">
+			<div style="width: 90%; text-align: center;">
+				<ul class="menu-ul">
+					<li class="menu-buttons" onClick="showStandings()">STANDINGS</li>
+					<li class="menu-buttons" onclick="showRoster()">ROSTER</li>
+					<li class="menu-buttons" onclick="showPlayerAwards()">PLAYER AWARDS</li>
+					<li class="menu-buttons" onclick="showRecords()">RECORDS</li>
+					<li class="menu-buttons" onclick="showTotalStats()">TOTAL STATS</li>
+					<li class="menu-buttons" onclick="showTeamUpgrades()">TEAM UPGRADES</li>
+					<li class="menu-buttons" onclick="showCountryLevels()">COUNTRIES</li>
+				</ul>
+			</div>
+			<div style="width: 10%; text-align: center;">
+				<img id="mainMenu-userTeam-logo" src="images/team-roster-icon-0.png" style="width: 50%;">
+			</div>
+		</div>
+		
+		<!--  HOME AND AWAY TEAM SELECT BUTTONS FOR EXCEBITION GAME -->
 		<div class="team-selection">
 			<div class="home-teams">
 				<input type="button" class="btn-atl-home" value="ATL" onclick="selectATLhome()"/>
@@ -24,7 +37,7 @@
 				<input type="button" class="btn-dal-home" value="DAL" onclick="selectDALhome()"/>
 				<input type="button" class="btn-den-home" value="DEN" onclick="selectDENhome()"/>
 				<input type="button" class="btn-det-home" value="DET" onclick="selectDEThome()"/>
-				<input type="button" class="btn-gs-home" value="GS" onclick="selectGShome()"/>
+				<input type="button" class="btn-gs-home" value="GSW" onclick="selectGShome()"/>
 				<input type="button" class="btn-hou-home" value="HOU" onclick="selectHOUhome()"/>
 				<input type="button" class="btn-ind-home" value="IND" onclick="selectINDhome()"/>
 				<input type="button" class="btn-lac-home" value="LAC" onclick="selectLAChome()"/>
@@ -36,6 +49,15 @@
 				<input type="button" class="btn-nop-home" value="NOP" onclick="selectNOPhome()"/>
 				<input type="button" class="btn-nyk-home" value="NYK" onclick="selectNYKhome()"/>
 				<input type="button" class="btn-okc-home" value="OKC" onclick="selectOKChome()"/>
+				<input type="button" class="btn-orl-home" value="ORL" onclick="selectORLhome()"/>
+				<input type="button" class="btn-phi-home" value="PHI" onclick="selectPHIhome()"/>
+				<input type="button" class="btn-phx-home" value="PHX" onclick="selectPHXhome()"/>
+				<input type="button" class="btn-por-home" value="POR" onclick="selectPORhome()"/>
+				<input type="button" class="btn-sac-home" value="SAC" onclick="selectSAChome()"/>
+				<input type="button" class="btn-sas-home" value="SAS" onclick="selectSAShome()"/>
+				<input type="button" class="btn-tor-home" value="TOR" onclick="selectTORhome()"/>
+				<input type="button" class="btn-uta-home" value="UTA" onclick="selectUTAhome()"/>
+				<input type="button" class="btn-was-home" value="WAS" onclick="selectWAShome()"/>
 			</div>
 			
 			<div class="away-teams">
@@ -48,7 +70,7 @@
 				<input type="button" class="btn-dal-away" value="DAL" onclick="selectDALaway()"/>
 				<input type="button" class="btn-den-away" value="DEN" onclick="selectDENaway()"/>
 				<input type="button" class="btn-det-away" value="DET" onclick="selectDETaway()"/>
-				<input type="button" class="btn-gs-away" value="GS" onclick="selectGSaway()"/>
+				<input type="button" class="btn-gs-away" value="GSW" onclick="selectGSaway()"/>
 				<input type="button" class="btn-hou-away" value="HOU" onclick="selectHOUaway()"/>
 				<input type="button" class="btn-ind-away" value="IND" onclick="selectINDaway()"/>
 				<input type="button" class="btn-lac-away" value="LAC" onclick="selectLACaway()"/>
@@ -60,12 +82,33 @@
 				<input type="button" class="btn-nop-away" value="NOP" onclick="selectNOPaway()"/>
 				<input type="button" class="btn-nyk-away" value="NYK" onclick="selectNYKaway()"/>
 				<input type="button" class="btn-okc-away" value="OKC" onclick="selectOKCaway()"/>
+				<input type="button" class="btn-orl-away" value="ORL" onclick="selectORLaway()"/>
+				<input type="button" class="btn-phi-away" value="PHI" onclick="selectPHIaway()"/>
+				<input type="button" class="btn-phx-away" value="PHX" onclick="selectPHXaway()"/>
+				<input type="button" class="btn-por-away" value="POR" onclick="selectPORaway()"/>
+				<input type="button" class="btn-sac-away" value="SAC" onclick="selectSACaway()"/>
+				<input type="button" class="btn-sas-away" value="SAS" onclick="selectSASaway()"/>
+				<input type="button" class="btn-tor-away" value="TOR" onclick="selectTORaway()"/>
+				<input type="button" class="btn-uta-away" value="UTA" onclick="selectUTAaway()"/>
+				<input type="button" class="btn-was-away" value="WAS" onclick="selectWASaway()"/>
 			</div>
 		</div>
-
+		<!--  SUB MENU BUTTONS -->
 		<input type="button" class="btn-simGame" value="SIM GAME"/> 
-		<input type="button" class="btn-simSeason" value="SIM SEASON"/> 
+		<input type="button" class="btn-simSeason" value="SIM SEASON"/>  
+		<input type="button" class="btn-playoff" value="PLAYOFF" onclick="openPlayoff()"/>
+		<input type="button" class="btn-mockDraft" value="NBA DRAFT" onclick="openMockDraft()"/>
+		<input type="button" class="btn-retiredPlayers" value="RETIRED PLAYERS" onclick="openRetiredPlayers()"/>
+		<input type="button" class="btn-showPlayerTrades" value="TRADE PLAYERS" onclick="openPlayerTrades()"/>
+		<input type="button" class="btn-showTrades" value="TRADE HISTORY" onclick="openTrades()"/>
 		
+		<!--  SEASON SIM PROGRESS BAR -->
+		<div class="simSeasonProgresModal-content"> 
+		<p class="simSeasonPercent"> Season progress </p> 
+			<div class="simSeasonProgresModal-content-update"> </div> 
+		</div>
+		
+		<!--  PLAYER AND TEAM STAT TABLE FOR EACH GAME PLAYED -->
 		<div class="team-stats-game">
 			<div class="scoreboard" style="display: block;">
 				<table class="scoreboardTable">
@@ -120,8 +163,8 @@
 						<tr class="playerStats">
 							<td id="pl11-0">0</td><td id="pl11-1"></td><td id="pl11-2"></td><td id="pl11-3"></td><td id="pl11-4"></td><td id="pl11-5"></td><td id="pl11-6"></td><td id="pl11-7"></td><td id="pl11-8"></td><td id="pl11-9"></td><td id="pl11-10"></td><td id="pl11-11"></td>
 						</tr>
-						<tr class="playerStats">
-							<td id="team-0">0</td><td id="tm0-1"></td><td id="tm0-2"></td><td id="tm0-3"></td><td id="tm0-4"></td><td id="tm0-5"></td><td id="tm0-6"></td><td id="tm0-7"></td><td id="tm0-8"></td><td id="tm0-9"></td><td id="tm0-10"></td><td id="tm0-11"></td>
+						<tr class="playerStats" style = "height: 30px; vertical-align: center">
+							<td id="team-0" style = "vertical-align: center">0</td><td id="tm0-1"></td><td id="tm0-2"></td><td id="tm0-3"></td><td id="tm0-4"></td><td id="tm0-5"></td><td id="tm0-6"></td><td id="tm0-7"></td><td id="tm0-8"></td><td id="tm0-9"></td><td id="tm0-10"></td><td id="tm0-11"></td>
 						</tr>
 					</thead>
 				</table>
@@ -180,7 +223,7 @@
 						<tr class="playerStats">
 							<td id="pl11-2-0">0</td><td id="pl11-2-1"></td><td id="pl11-2-2"></td><td id="pl11-2-3"></td><td id="pl11-2-4"></td><td id="pl11-2-5"></td><td id="pl11-2-6"></td><td id="pl11-2-7"></td><td id="pl11-2-8"></td><td id="pl11-2-9"></td><td id="pl11-2-10"></td><td id="pl11-2-11"></td>
 						</tr>
-						<tr class="playerStats">
+						<tr class="playerStats" style = "height: 30px; vertical-align: center">
 							<td id="team-1">0</td><td id="tm1-1"></td><td id="tm1-2"></td><td id="tm1-3"></td><td id="tm1-4"></td><td id="tm1-5"></td><td id="tm1-6"></td><td id="tm1-7"></td><td id="tm1-8"></td><td id="tm1-9"></td><td id="tm1-10"></td><td id="tm1-11"></td>
 						</tr>
 					</thead>
@@ -188,6 +231,8 @@
 			</div>
 		</div>
 		<br></br>
+		<!--  PLAYER AND TEAM STAT TABLE FOR SEASON MODE -->
+		<!--  HOME TEAM SEASON STATS -->
 		<div class="team-stats-game">
 			<div class="scoreboard3" style="display: block;">
 				<table class="scoreboardTable">
@@ -242,13 +287,13 @@
 						<tr class="playerStats">
 							<td id="pl11-0-tot">0</td><td id="pl11-1-tot"></td><td id="pl11-2-tot"></td><td id="pl11-3-tot"></td><td id="pl11-4-tot"></td><td id="pl11-5-tot"></td><td id="pl11-6-tot"></td><td id="pl11-7-tot"></td><td id="pl11-8-tot"></td><td id="pl11-9-tot"></td><td id="pl11-10-tot"></td><td id="pl11-11-tot"></td>
 						</tr>
-						<tr class="playerStats">
-							<td id="team-0-tot">0</td><td id="tm0-1-tot"></td><td id="tm0-2-tot"></td><td id="tm0-3-tot"></td><td id="tm0-4-tot"></td><td id="tm0-5-tot"></td><td id="tm0-6-tot"></td><td id="tm0-7-tot"></td><td id="tm0-8-tot"></td><td id="tm0-9-tot"></td><td id="tm0-10-tot"></td><td id="tm0-11-tot"></td>
+						<tr class="playerStats" style = "height: 30px; vertical-align: center">
+							<td id="team-0-tot" style = "vertical-align: center">0</td><td id="tm0-1-tot"></td><td id="tm0-2-tot"></td><td id="tm0-3-tot"></td><td id="tm0-4-tot"></td><td id="tm0-5-tot"></td><td id="tm0-6-tot"></td><td id="tm0-7-tot"></td><td id="tm0-8-tot"></td><td id="tm0-9-tot"></td><td id="tm0-10-tot"></td><td id="tm0-11-tot"></td>
 						</tr>
 					</thead>
 				</table>
 			</div>
-		
+			<!--  AWAY TEAM SEASON STATS -->
 			<div class="scoreboard4" style="display: block;">
 				<table class="scoreboardTable">
 					<thead class="scoreboardTableHeader">
@@ -302,8 +347,8 @@
 						<tr class="playerStats">
 							<td id="pl11-2-0-tot">0</td><td id="pl11-2-1-tot"></td><td id="pl11-2-2-tot"></td><td id="pl11-2-3-tot"></td><td id="pl11-2-4-tot"></td><td id="pl11-2-5-tot"></td><td id="pl11-2-6-tot"></td><td id="pl11-2-7-tot"></td><td id="pl11-2-8-tot"></td><td id="pl11-2-9-tot"></td><td id="pl11-2-10-tot"></td><td id="pl11-2-11-tot"></td>
 						</tr>
-						<tr class="playerStats">
-							<td id="team-1-tot">0</td><td id="tm1-1-tot"></td><td id="tm1-2-tot"></td><td id="tm1-3-tot"></td><td id="tm1-4-tot"></td><td id="tm1-5-tot"></td><td id="tm1-6-tot"></td><td id="tm1-7-tot"></td><td id="tm1-8-tot"></td><td id="tm1-9-tot"></td><td id="tm1-10-tot"></td><td id="tm1-11-tot"></td>
+						<tr class="playerStats" style = "height: 30px; vertical-align: center">
+							<td id="team-1-tot" style = "vertical-align: center">0</td><td id="tm1-1-tot"></td><td id="tm1-2-tot"></td><td id="tm1-3-tot"></td><td id="tm1-4-tot"></td><td id="tm1-5-tot"></td><td id="tm1-6-tot"></td><td id="tm1-7-tot"></td><td id="tm1-8-tot"></td><td id="tm1-9-tot"></td><td id="tm1-10-tot"></td><td id="tm1-11-tot"></td>
 						</tr>
 					</thead>
 				</table>
@@ -311,7 +356,10 @@
 		</div>
 		
 		<input type="button" class="btn-showLeaders" value="League Leaders"/> <!--gm1.playGame(bkn, bos)-->
-		<!--  Points per game Leader table  -->
+		
+		<!--  PER GAME SEASON STATS FOR PLAYERS - TOP 10 -->
+		
+		<!--  point per game top 10 leaders -->
 		<div class="perGameLeaders">
 			<div class="ppgtable" style="display: block;">
 					<table class="ppgLeaderTable">
@@ -560,7 +608,7 @@
 				</div>
 				<!--  3 pointer % Leader table  -->
 				<div class="3ptprctable" style="display: block;">
-					<table class="3ptprcLeaderTable">
+					<table class="threeptprcLeaderTable">
 						<thead class="3ptprcLeaderTableHeader">
 							<tr class="columnHeading">
 								<th class="playerNames">Player</th>
@@ -756,6 +804,33 @@
 						<tr class="leagueLeaders">
 							<td id="lead21"></td> <td id="lead21-0"></td> <td id="lead21-1"></td> <td id="lead21-2"></td>
 						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead22"></td> <td id="lead22-0"></td> <td id="lead22-1"></td> <td id="lead22-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead23"></td> <td id="lead23-0"></td> <td id="lead23-1"></td> <td id="lead23-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead24"></td> <td id="lead24-0"></td> <td id="lead24-1"></td> <td id="lead24-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead25"></td> <td id="lead25-0"></td> <td id="lead25-1"></td> <td id="lead25-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead26"></td> <td id="lead26-0"></td> <td id="lead26-1"></td> <td id="lead26-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead27"></td> <td id="lead27-0"></td> <td id="lead27-1"></td> <td id="lead27-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead28"></td> <td id="lead28-0"></td> <td id="lead28-1"></td> <td id="lead28-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead29"></td> <td id="lead29-0"></td> <td id="lead29-1"></td> <td id="lead29-2"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="lead30"></td> <td id="lead30-0"></td> <td id="lead30-1"></td> <td id="lead30-2"></td>
+						</tr>
 					</thead>
 				</table>
 			</div>
@@ -767,7 +842,7 @@
 				<div class="modal-content">
 					<span class="close" onclick="closeAwards()">&times;</span> 
 					<br>
-					<p class="awardTitle">NBA Awards 2025</p><br>
+					<p class="awardTitle playerAwards">NBA Player Awards</p><br>
 					
 					<h4> MVP </h4>
 					<table style="width:100%">
@@ -811,7 +886,7 @@
 							<th rowspan="2" id="mostImprovedWin">Player Name</th>
 							<th>PPG</th><th>RPG</th><th>APG</th><th>SPG</th><th>BPG</th><th>FG%</th><th>3P%</th><th>FT%</th>
 						</tr>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+							<td id="MostImpPlStat-1"></td><td id="MostImpPlStat-2"></td><td id="MostImpPlStat-3"></td><td id="MostImpPlStat-4"></td><td id="MostImpPlStat-5"></td><td id="MostImpPlStat-6"></td><td id="MostImpPlStat-7"></td><td id="MostImpPlStat-8"></td>
 						</tr>
 					</table>
 					
@@ -943,6 +1018,7 @@
 				</div>
 			</div>
 			
+			<!-- The Career total records Modal -->
 			<div id="careerStatModalID", class="careerStatModal">
 				<div class="careerStat-modal-content">
 					<span class="close" onclick="closeCareerTotalStats()">&times;</span>
@@ -989,20 +1065,27 @@
 				</div>
 			</div>
 			
+			<!--  TEAM ROSTER MODAL  -->
 			<div class="rosterModal">
 				<div class="roster-modal-content">
 					<span class="close" onclick="closeRosterModal()">&times;</span>
 					<br>
-					<h3 id="rosterTitle">Atlanta Hawks</h3>
+					<h3 id="rosterTitle"></h3>
 					<div id="roster-row">
-						<div id="roster-column">
+						<div id="teamRoster-button-container" style="width: 35%;">
+							<div id="teamRoster-button" onclick="sortRosterLineup()"> Best<br>Lineup </div>
+						</div>
+						<div id="roster-column" style="width: 10%;">
 							<img id="arrow-roster" src="images/arrow-left.png" onclick="prevousTeamRoster()" >
 						</div>
-						<div id="roster-column">
+						<div id="roster-column" style="width: 10%;">
 							<img id="logo-roster" src="images/team-roster-icon-1.png"  >
 						</div>
-						<div id="roster-column">
+						<div id="roster-column" style="width: 10%;">
 							<img id="arrow-roster" src="images/arrow-right.png" onclick="nextTeamRoster()" >
+						</div>
+						<div  id="teamRoster-userIcon-container" style="width: 35%;">
+							<img id="teamRoster-userIcon" src="">
 						</div>
 					</div>
 					
@@ -1010,24 +1093,24 @@
 						<tr>
 							<th class="roster-role">Role</th><th class="roster-name">Player name</th> <th class="roster-overal">Overal</th> <th class="roster-position">Position</th> <th class="roster-sec-position">Sec. Position</th> <th class="roster-age">Age</th> <th class="roster-country">Country</th> <th class="roster-experience">NBA exp.</th>
 						</tr>
-							<tr id="roster-row-1" onclick="initSwap(0)" ondblclick="showPlayerInfo(0)"> <td id="roster-role-1">C</td> <td id="roster-name-1"></td> <td id="roster-overal-1"></td> <td id="roster-position-1"></td> <td id="roster-sec-position-1"></td> <td id="roster-age-1"></td> <td id="roster-country-1"></td> <td id="roster-experience-1"></td> </tr>
-							<tr id="roster-row-2" onclick="initSwap(1)" ondblclick="showPlayerInfo(1)"> <td id="roster-role-2">PF</td> <td id="roster-name-2"></td> <td id="roster-overal-2"></td> <td id="roster-position-2"></td> <td id="roster-sec-position-2"></td> <td id="roster-age-2"></td> <td id="roster-country-2"></td> <td id="roster-experience-2"></td> </tr>
-							<tr id="roster-row-3" onclick="initSwap(2)" ondblclick="showPlayerInfo(2)"> <td id="roster-role-3">SF</td> <td id="roster-name-3"></td> <td id="roster-overal-3"></td> <td id="roster-position-3"></td> <td id="roster-sec-position-3"></td> <td id="roster-age-3"></td> <td id="roster-country-3"></td> <td id="roster-experience-3"></td> </tr>
-							<tr id="roster-row-4" onclick="initSwap(3)" ondblclick="showPlayerInfo(3)"> <td id="roster-role-4">SG</td> <td id="roster-name-4"></td> <td id="roster-overal-4"></td> <td id="roster-position-4"></td> <td id="roster-sec-position-4"></td> <td id="roster-age-4"></td> <td id="roster-country-4"></td> <td id="roster-experience-4"></td> </tr>
-							<tr id="roster-row-5" onclick="initSwap(4)" ondblclick="showPlayerInfo(4)"> <td id="roster-role-5">PG</td> <td id="roster-name-5"></td> <td id="roster-overal-5"></td> <td id="roster-position-5"></td> <td id="roster-sec-position-5"></td> <td id="roster-age-5"></td> <td id="roster-country-5"></td> <td id="roster-experience-5"></td> </tr>
-							<tr id="roster-row-6" onclick="initSwap(5)" ondblclick="showPlayerInfo(5)"> <td id="roster-role-6">Bench</td> <td id="roster-name-6"></td> <td id="roster-overal-6"></td> <td id="roster-position-6"></td> <td id="roster-sec-position-6"></td> <td id="roster-age-6"></td> <td id="roster-country-6"></td> <td id="roster-experience-6"></td> </tr>
-							<tr id="roster-row-7" onclick="initSwap(6)" ondblclick="showPlayerInfo(6)"> <td id="roster-role-7">Bench</td> <td id="roster-name-7"></td> <td id="roster-overal-7"></td> <td id="roster-position-7"></td> <td id="roster-sec-position-7"></td> <td id="roster-age-7"></td> <td id="roster-country-7"></td> <td id="roster-experience-7"></td> </tr>
-							<tr id="roster-row-8" onclick="initSwap(7)" ondblclick="showPlayerInfo(7)"> <td id="roster-role-8">Bench</td> <td id="roster-name-8"></td> <td id="roster-overal-8"></td> <td id="roster-position-8"></td> <td id="roster-sec-position-8"></td> <td id="roster-age-8"></td> <td id="roster-country-8"></td> <td id="roster-experience-8"></td> </tr>
-							<tr id="roster-row-9" onclick="initSwap(8)" ondblclick="showPlayerInfo(8)"> <td id="roster-role-9">Bench</td> <td id="roster-name-9"></td> <td id="roster-overal-9"></td> <td id="roster-position-9"></td> <td id="roster-sec-position-9"></td> <td id="roster-age-9"></td> <td id="roster-country-9"></td> <td id="roster-experience-9"></td> </tr>
-							<tr id="roster-row-10" onclick="initSwap(9)" ondblclick="showPlayerInfo(9)"> <td id="roster-role-10">Bench</td> <td id="roster-name-10"></td> <td id="roster-overal-10"></td> <td id="roster-position-10"></td> <td id="roster-sec-position-10"></td> <td id="roster-age-10"></td> <td id="roster-country-10"></td> <td id="roster-experience-10"></td> </tr>
-							<tr id="roster-row-11" onclick="initSwap(10)" ondblclick="showPlayerInfo(10)"> <td id="roster-role-11">Bench</td> <td id="roster-name-11"></td> <td id="roster-overal-11"></td> <td id="roster-position-11"></td> <td id="roster-sec-position-11"></td> <td id="roster-age-11"></td> <td id="roster-country-11"></td> <td id="roster-experience-11"></td> </tr>
-							<tr id="roster-row-12" onclick="initSwap(11)" ondblclick="showPlayerInfo(11)"> <td id="roster-role-12">Bench</td> <td id="roster-name-12"></td> <td id="roster-overal-12"></td> <td id="roster-position-12"></td> <td id="roster-sec-position-12"></td> <td id="roster-age-12"></td> <td id="roster-country-12"></td> <td id="roster-experience-12"></td> </tr>
-							<tr id="roster-row-13" onclick="initSwap(12)" ondblclick="showPlayerInfo(12)"> <td id="roster-role-13">Reserve</td> <td id="roster-name-13"></td> <td id="roster-overal-13"></td> <td id="roster-position-13"></td> <td id="roster-sec-position-13"></td> <td id="roster-age-13"></td> <td id="roster-country-13"></td> <td id="roster-experience-13"></td> </tr>
-							<tr id="roster-row-14" onclick="initSwap(13)" ondblclick="showPlayerInfo(13)"> <td id="roster-role-14">Reserve</td> <td id="roster-name-14"></td> <td id="roster-overal-14"></td> <td id="roster-position-14"></td> <td id="roster-sec-position-14"></td> <td id="roster-age-14"></td> <td id="roster-country-14"></td> <td id="roster-experience-14"></td> </tr>
-							<tr id="roster-row-15" onclick="initSwap(14)" ondblclick="showPlayerInfo(14)"> <td id="roster-role-15">Reserve</td> <td id="roster-name-15"></td> <td id="roster-overal-15"></td> <td id="roster-position-15"></td> <td id="roster-sec-position-15"></td> <td id="roster-age-15"></td> <td id="roster-country-15"></td> <td id="roster-experience-15"></td> </tr>
-							<tr id="roster-row-16" onclick="initSwap(15)" ondblclick="showPlayerInfo(15)"> <td id="roster-role-16">Reserve</td> <td id="roster-name-16"></td> <td id="roster-overal-16"></td> <td id="roster-position-16"></td> <td id="roster-sec-position-16"></td> <td id="roster-age-16"></td> <td id="roster-country-16"></td> <td id="roster-experience-16"></td> </tr>
-							<tr id="roster-row-17" onclick="initSwap(16)" ondblclick="showPlayerInfo(16)"> <td id="roster-role-17">Reserve</td> <td id="roster-name-17"></td> <td id="roster-overal-17"></td> <td id="roster-position-17"></td> <td id="roster-sec-position-17"></td> <td id="roster-age-17"></td> <td id="roster-country-17"></td> <td id="roster-experience-17"></td> </tr>
-							<tr id="roster-row-18" onclick="initSwap(17)" ondblclick="showPlayerInfo(17)"> <td id="roster-role-18">Reserve</td> <td id="roster-name-18"></td> <td id="roster-overal-18"></td> <td id="roster-position-18"></td> <td id="roster-sec-position-18"></td> <td id="roster-age-18"></td> <td id="roster-country-18"></td> <td id="roster-experience-18"></td> </tr>
+							<tr class="player-row" id="roster-row-1" onclick="initSwap(0)" ondblclick="showPlayerInfo(0)"> <td id="roster-role-1">C</td> <td id="roster-name-1"></td> <td id="roster-overal-1"></td> <td id="roster-position-1"></td> <td id="roster-sec-position-1"></td> <td id="roster-age-1"></td> <td id="roster-country-1"></td> <td id="roster-experience-1"></td> </tr>
+							<tr class="player-row" id="roster-row-2" onclick="initSwap(1)" ondblclick="showPlayerInfo(1)"> <td id="roster-role-2">PF</td> <td id="roster-name-2"></td> <td id="roster-overal-2"></td> <td id="roster-position-2"></td> <td id="roster-sec-position-2"></td> <td id="roster-age-2"></td> <td id="roster-country-2"></td> <td id="roster-experience-2"></td> </tr>
+							<tr class="player-row" id="roster-row-3" onclick="initSwap(2)" ondblclick="showPlayerInfo(2)"> <td id="roster-role-3">SF</td> <td id="roster-name-3"></td> <td id="roster-overal-3"></td> <td id="roster-position-3"></td> <td id="roster-sec-position-3"></td> <td id="roster-age-3"></td> <td id="roster-country-3"></td> <td id="roster-experience-3"></td> </tr>
+							<tr class="player-row" id="roster-row-4" onclick="initSwap(3)" ondblclick="showPlayerInfo(3)"> <td id="roster-role-4">SG</td> <td id="roster-name-4"></td> <td id="roster-overal-4"></td> <td id="roster-position-4"></td> <td id="roster-sec-position-4"></td> <td id="roster-age-4"></td> <td id="roster-country-4"></td> <td id="roster-experience-4"></td> </tr>
+							<tr class="player-row" id="roster-row-5" onclick="initSwap(4)" ondblclick="showPlayerInfo(4)"> <td id="roster-role-5">PG</td> <td id="roster-name-5"></td> <td id="roster-overal-5"></td> <td id="roster-position-5"></td> <td id="roster-sec-position-5"></td> <td id="roster-age-5"></td> <td id="roster-country-5"></td> <td id="roster-experience-5"></td> </tr>
+							<tr class="player-row" id="roster-row-6" onclick="initSwap(5)" ondblclick="showPlayerInfo(5)"> <td id="roster-role-6">Bench</td> <td id="roster-name-6"></td> <td id="roster-overal-6"></td> <td id="roster-position-6"></td> <td id="roster-sec-position-6"></td> <td id="roster-age-6"></td> <td id="roster-country-6"></td> <td id="roster-experience-6"></td> </tr>
+							<tr class="player-row" id="roster-row-7" onclick="initSwap(6)" ondblclick="showPlayerInfo(6)"> <td id="roster-role-7">Bench</td> <td id="roster-name-7"></td> <td id="roster-overal-7"></td> <td id="roster-position-7"></td> <td id="roster-sec-position-7"></td> <td id="roster-age-7"></td> <td id="roster-country-7"></td> <td id="roster-experience-7"></td> </tr>
+							<tr class="player-row" id="roster-row-8" onclick="initSwap(7)" ondblclick="showPlayerInfo(7)"> <td id="roster-role-8">Bench</td> <td id="roster-name-8"></td> <td id="roster-overal-8"></td> <td id="roster-position-8"></td> <td id="roster-sec-position-8"></td> <td id="roster-age-8"></td> <td id="roster-country-8"></td> <td id="roster-experience-8"></td> </tr>
+							<tr class="player-row" id="roster-row-9" onclick="initSwap(8)" ondblclick="showPlayerInfo(8)"> <td id="roster-role-9">Bench</td> <td id="roster-name-9"></td> <td id="roster-overal-9"></td> <td id="roster-position-9"></td> <td id="roster-sec-position-9"></td> <td id="roster-age-9"></td> <td id="roster-country-9"></td> <td id="roster-experience-9"></td> </tr>
+							<tr class="player-row" id="roster-row-10" onclick="initSwap(9)" ondblclick="showPlayerInfo(9)"> <td id="roster-role-10">Bench</td> <td id="roster-name-10"></td> <td id="roster-overal-10"></td> <td id="roster-position-10"></td> <td id="roster-sec-position-10"></td> <td id="roster-age-10"></td> <td id="roster-country-10"></td> <td id="roster-experience-10"></td> </tr>
+							<tr class="player-row" id="roster-row-11" onclick="initSwap(10)" ondblclick="showPlayerInfo(10)"> <td id="roster-role-11">Bench</td> <td id="roster-name-11"></td> <td id="roster-overal-11"></td> <td id="roster-position-11"></td> <td id="roster-sec-position-11"></td> <td id="roster-age-11"></td> <td id="roster-country-11"></td> <td id="roster-experience-11"></td> </tr>
+							<tr class="player-row" id="roster-row-12" onclick="initSwap(11)" ondblclick="showPlayerInfo(11)"> <td id="roster-role-12">Bench</td> <td id="roster-name-12"></td> <td id="roster-overal-12"></td> <td id="roster-position-12"></td> <td id="roster-sec-position-12"></td> <td id="roster-age-12"></td> <td id="roster-country-12"></td> <td id="roster-experience-12"></td> </tr>
+							<tr class="player-row" id="roster-row-13" onclick="initSwap(12)" ondblclick="showPlayerInfo(12)"> <td id="roster-role-13">Reserve</td> <td id="roster-name-13"></td> <td id="roster-overal-13"></td> <td id="roster-position-13"></td> <td id="roster-sec-position-13"></td> <td id="roster-age-13"></td> <td id="roster-country-13"></td> <td id="roster-experience-13"></td> </tr>
+							<tr class="player-row" id="roster-row-14" onclick="initSwap(13)" ondblclick="showPlayerInfo(13)"> <td id="roster-role-14">Reserve</td> <td id="roster-name-14"></td> <td id="roster-overal-14"></td> <td id="roster-position-14"></td> <td id="roster-sec-position-14"></td> <td id="roster-age-14"></td> <td id="roster-country-14"></td> <td id="roster-experience-14"></td> </tr>
+							<tr class="player-row" id="roster-row-15" onclick="initSwap(14)" ondblclick="showPlayerInfo(14)"> <td id="roster-role-15">Reserve</td> <td id="roster-name-15"></td> <td id="roster-overal-15"></td> <td id="roster-position-15"></td> <td id="roster-sec-position-15"></td> <td id="roster-age-15"></td> <td id="roster-country-15"></td> <td id="roster-experience-15"></td> </tr>
+							<tr class="player-row" id="roster-row-16" onclick="initSwap(15)" ondblclick="showPlayerInfo(15)"> <td id="roster-role-16">Reserve</td> <td id="roster-name-16"></td> <td id="roster-overal-16"></td> <td id="roster-position-16"></td> <td id="roster-sec-position-16"></td> <td id="roster-age-16"></td> <td id="roster-country-16"></td> <td id="roster-experience-16"></td> </tr>
+							<tr class="player-row" id="roster-row-17" onclick="initSwap(16)" ondblclick="showPlayerInfo(16)"> <td id="roster-role-17">Reserve</td> <td id="roster-name-17"></td> <td id="roster-overal-17"></td> <td id="roster-position-17"></td> <td id="roster-sec-position-17"></td> <td id="roster-age-17"></td> <td id="roster-country-17"></td> <td id="roster-experience-17"></td> </tr>
+							<tr class="player-row" id="roster-row-18" onclick="initSwap(17)" ondblclick="showPlayerInfo(17)"> <td id="roster-role-18">Reserve</td> <td id="roster-name-18"></td> <td id="roster-overal-18"></td> <td id="roster-position-18"></td> <td id="roster-sec-position-18"></td> <td id="roster-age-18"></td> <td id="roster-country-18"></td> <td id="roster-experience-18"></td> </tr>
 					</table>
 				</div>
 			</div>
@@ -1076,10 +1159,1261 @@
 						<!-- <tr> <td id="plDevelop-overal"></td> <td id="plDevelop-ins"></td> <td id="plDevelop-pt2"></td> <td id="plDevelop-pt3"></td> <td id="plDevelop-ftr"></td> <td id="plDevelop-jum"></td> <td id="plDevelop-str"></td> <td id="plDevelop-spe"></td> <td id="plDevelop-qui"></td> <td id="plDevelop-dri"></td> <td id="plDevelop-pas"></td> <td id="plDevelop-ore"></td> <td id="plDevelop-dre"></td> <td id="plDevelop-oaw"></td> <td id="plDevelop-daw"></td> <td id="plDevelop-blk"></td> <td id="plDevelop-stl"></td> <td id="plDevelop-end"></td> <td id="plDevelop-inj"></td> <td id="plDevelop-pot"></td> </tr> -->
 					</table>
 					
+					<h3 style="text-align: center">PLAYER AWARDS</h3>
+					<div class="playerAwardsBox"></div>
 				</div>
 			</div>
 			
+			<!--  STANDINGS MENU BUTTON MODAL -->
+			<div id="standingsModalID", class="standingsModal">
+				<div class="standings-modal-content">
+					<span class="close" onclick="closeStandingsModal()">&times;</span>
+					<br>
+					<h3 class="careerTotalTitle">League Standings</h3>
+					
+					<table class="standingsModalTable" id="standingsModalTable">
+					<thead class="leagueLeadersTableHeader">
+						<tr class="columnHeading">
+							<th class="playerNames">Teams</th>
+							<!-- games,pts,oreb,dreb,ast, stl,blk,to,fouls,insM, insA,2ptM,2ptA,3ptM,3ptA, ftM,ftA,pointAllowed  -->
+							<th onclick="sortTable(0)">Wins</th>
+							<th onclick="sortTable(1)">Loses</th>
+							<th onclick="sortTable(2)">%</th>
+							<th onclick="sortTable(3)">PTS</th>
+							<th onclick="sortTable(4)">PTS A.</th> <!-- points allowed total -->
+							<th onclick="sortTable(5)">O.REB</th>
+							<th onclick="sortTable(6)">REB</th>
+							<th onclick="sortTable(7)">AST</th>
+							<th onclick="sortTable(8)">STL</th>
+							<th onclick="sortTable(9)">BLK</th>
+							<th onclick="sortTable(10)">TO</th>
+							<th onclick="sortTable(11)">FLS</th>
+							<th onclick="sortTable(12)">FGM</th>
+							<th onclick="sortTable(13)">FGA</th>
+							<th onclick="sortTable(14)">FG%</th>
+							<th onclick="sortTable(15)">3PM</th>
+							<th onclick="sortTable(16)">3PA</th>
+							<th onclick="sortTable(17)">3P%</th>
+							<th onclick="sortTable(18)">FTM</th>
+							<th onclick="sortTable(19)">FTA</th>
+							<th onclick="sortTable(20)">FT%</th>
+						</tr>
+						<tr class="standings-topMenu">
+							<td id="stand-1-name"></td> <td id="stand-1-1"></td> <td id="stand-1-2"></td> <td id="stand-1-3"></td><td id="stand-1-4"></td><td id="stand-1-5"></td><td id="stand-1-6"></td><td id="stand-1-7"></td><td id="stand-1-8"></td><td id="stand-1-9"></td><td id="stand-1-10"></td><td id="stand-1-11"></td><td id="stand-1-12"></td><td id="stand-1-13"></td><td id="stand-1-14"></td><td id="stand-1-15"></td><td id="stand-1-16"></td><td id="stand-1-17"></td><td id="stand-1-18"></td><td id="stand-1-19"></td><td id="stand-1-20"></td><td id="stand-1-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-2-name"></td> <td id="stand-2-1"></td> <td id="stand-2-2"></td> <td id="stand-2-3"></td><td id="stand-2-4"></td><td id="stand-2-5"></td><td id="stand-2-6"></td><td id="stand-2-7"></td><td id="stand-2-8"></td><td id="stand-2-9"></td><td id="stand-2-10"></td><td id="stand-2-11"></td><td id="stand-2-12"></td><td id="stand-2-13"></td><td id="stand-2-14"></td><td id="stand-2-15"></td><td id="stand-2-16"></td><td id="stand-2-17"></td><td id="stand-2-18"></td><td id="stand-2-19"></td><td id="stand-2-20"></td><td id="stand-2-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-3-name"></td> <td id="stand-3-1"></td> <td id="stand-3-2"></td> <td id="stand-3-3"></td><td id="stand-3-4"></td><td id="stand-3-5"></td><td id="stand-3-6"></td><td id="stand-3-7"></td><td id="stand-3-8"></td><td id="stand-3-9"></td><td id="stand-3-10"></td><td id="stand-3-11"></td><td id="stand-3-12"></td><td id="stand-3-13"></td><td id="stand-3-14"></td><td id="stand-3-15"></td><td id="stand-3-16"></td><td id="stand-3-17"></td><td id="stand-3-18"></td><td id="stand-3-19"></td><td id="stand-3-20"></td><td id="stand-3-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-4-name"></td> <td id="stand-4-1"></td> <td id="stand-4-2"></td> <td id="stand-4-3"></td><td id="stand-4-4"></td><td id="stand-4-5"></td><td id="stand-4-6"></td><td id="stand-4-7"></td><td id="stand-4-8"></td><td id="stand-4-9"></td><td id="stand-4-10"></td><td id="stand-4-11"></td><td id="stand-4-12"></td><td id="stand-4-13"></td><td id="stand-4-14"></td><td id="stand-4-15"></td><td id="stand-4-16"></td><td id="stand-4-17"></td><td id="stand-4-18"></td><td id="stand-4-19"></td><td id="stand-4-20"></td><td id="stand-4-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-5-name"></td> <td id="stand-5-1"></td> <td id="stand-5-2"></td> <td id="stand-5-3"></td><td id="stand-5-4"></td><td id="stand-5-5"></td><td id="stand-5-6"></td><td id="stand-5-7"></td><td id="stand-5-8"></td><td id="stand-5-9"></td><td id="stand-5-10"></td><td id="stand-5-11"></td><td id="stand-5-12"></td><td id="stand-5-13"></td><td id="stand-5-14"></td><td id="stand-5-15"></td><td id="stand-5-16"></td><td id="stand-5-17"></td><td id="stand-5-18"></td><td id="stand-5-19"></td><td id="stand-5-20"></td><td id="stand-5-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-6-name"></td> <td id="stand-6-1"></td> <td id="stand-6-2"></td> <td id="stand-6-3"></td><td id="stand-6-4"></td><td id="stand-6-5"></td><td id="stand-6-6"></td><td id="stand-6-7"></td><td id="stand-6-8"></td><td id="stand-6-9"></td><td id="stand-6-10"></td><td id="stand-6-11"></td><td id="stand-6-12"></td><td id="stand-6-13"></td><td id="stand-6-14"></td><td id="stand-6-15"></td><td id="stand-6-16"></td><td id="stand-6-17"></td><td id="stand-6-18"></td><td id="stand-6-19"></td><td id="stand-6-20"></td><td id="stand-6-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-7-name"></td> <td id="stand-7-1"></td> <td id="stand-7-2"></td> <td id="stand-7-3"></td><td id="stand-7-4"></td><td id="stand-7-5"></td><td id="stand-7-6"></td><td id="stand-7-7"></td><td id="stand-7-8"></td><td id="stand-7-9"></td><td id="stand-7-10"></td><td id="stand-7-11"></td><td id="stand-7-12"></td><td id="stand-7-13"></td><td id="stand-7-14"></td><td id="stand-7-15"></td><td id="stand-7-16"></td><td id="stand-7-17"></td><td id="stand-7-18"></td><td id="stand-7-19"></td><td id="stand-7-20"></td><td id="stand-7-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-8-name"></td> <td id="stand-8-1"></td> <td id="stand-8-2"></td> <td id="stand-8-3"></td><td id="stand-8-4"></td><td id="stand-8-5"></td><td id="stand-8-6"></td><td id="stand-8-7"></td><td id="stand-8-8"></td><td id="stand-8-9"></td><td id="stand-8-10"></td><td id="stand-8-11"></td><td id="stand-8-12"></td><td id="stand-8-13"></td><td id="stand-8-14"></td><td id="stand-8-15"></td><td id="stand-8-16"></td><td id="stand-8-17"></td><td id="stand-8-18"></td><td id="stand-8-19"></td><td id="stand-8-20"></td><td id="stand-8-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-9-name"></td> <td id="stand-9-1"></td> <td id="stand-9-2"></td> <td id="stand-9-3"></td><td id="stand-9-4"></td><td id="stand-9-5"></td><td id="stand-9-6"></td><td id="stand-9-7"></td><td id="stand-9-8"></td><td id="stand-9-9"></td><td id="stand-9-10"></td><td id="stand-9-11"></td><td id="stand-9-12"></td><td id="stand-9-13"></td><td id="stand-9-14"></td><td id="stand-9-15"></td><td id="stand-9-16"></td><td id="stand-9-17"></td><td id="stand-9-18"></td><td id="stand-9-19"></td><td id="stand-9-20"></td><td id="stand-9-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-10-name"></td> <td id="stand-10-1"></td> <td id="stand-10-2"></td> <td id="stand-10-3"></td><td id="stand-10-4"></td><td id="stand-10-5"></td><td id="stand-10-6"></td><td id="stand-10-7"></td><td id="stand-10-8"></td><td id="stand-10-9"></td><td id="stand-10-10"></td><td id="stand-10-11"></td><td id="stand-10-12"></td><td id="stand-10-13"></td><td id="stand-10-14"></td><td id="stand-10-15"></td><td id="stand-10-16"></td><td id="stand-10-17"></td><td id="stand-10-18"></td><td id="stand-10-19"></td><td id="stand-10-20"></td><td id="stand-10-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-11-name"></td> <td id="stand-11-1"></td> <td id="stand-11-2"></td> <td id="stand-11-3"></td><td id="stand-11-4"></td><td id="stand-11-5"></td><td id="stand-11-6"></td><td id="stand-11-7"></td><td id="stand-11-8"></td><td id="stand-11-9"></td><td id="stand-11-10"></td><td id="stand-11-11"></td><td id="stand-11-12"></td><td id="stand-11-13"></td><td id="stand-11-14"></td><td id="stand-11-15"></td><td id="stand-11-16"></td><td id="stand-11-17"></td><td id="stand-11-18"></td><td id="stand-11-19"></td><td id="stand-11-20"></td><td id="stand-11-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-12-name"></td> <td id="stand-12-1"></td> <td id="stand-12-2"></td> <td id="stand-12-3"></td><td id="stand-12-4"></td><td id="stand-12-5"></td><td id="stand-12-6"></td><td id="stand-12-7"></td><td id="stand-12-8"></td><td id="stand-12-9"></td><td id="stand-12-10"></td><td id="stand-12-11"></td><td id="stand-12-12"></td><td id="stand-12-13"></td><td id="stand-12-14"></td><td id="stand-12-15"></td><td id="stand-12-16"></td><td id="stand-12-17"></td><td id="stand-12-18"></td><td id="stand-12-19"></td><td id="stand-12-20"></td><td id="stand-12-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-13-name"></td> <td id="stand-13-1"></td> <td id="stand-13-2"></td> <td id="stand-13-3"></td><td id="stand-13-4"></td><td id="stand-13-5"></td><td id="stand-13-6"></td><td id="stand-13-7"></td><td id="stand-13-8"></td><td id="stand-13-9"></td><td id="stand-13-10"></td><td id="stand-13-11"></td><td id="stand-13-12"></td><td id="stand-13-13"></td><td id="stand-13-14"></td><td id="stand-13-15"></td><td id="stand-13-16"></td><td id="stand-13-17"></td><td id="stand-13-18"></td><td id="stand-13-19"></td><td id="stand-13-20"></td><td id="stand-13-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-14-name"></td> <td id="stand-14-1"></td> <td id="stand-14-2"></td> <td id="stand-14-3"></td><td id="stand-14-4"></td><td id="stand-14-5"></td><td id="stand-14-6"></td><td id="stand-14-7"></td><td id="stand-14-8"></td><td id="stand-14-9"></td><td id="stand-14-10"></td><td id="stand-14-11"></td><td id="stand-14-12"></td><td id="stand-14-13"></td><td id="stand-14-14"></td><td id="stand-14-15"></td><td id="stand-14-16"></td><td id="stand-14-17"></td><td id="stand-14-18"></td><td id="stand-14-19"></td><td id="stand-14-20"></td><td id="stand-14-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-15-name"></td> <td id="stand-15-1"></td> <td id="stand-15-2"></td> <td id="stand-15-3"></td><td id="stand-15-4"></td><td id="stand-15-5"></td><td id="stand-15-6"></td><td id="stand-15-7"></td><td id="stand-15-8"></td><td id="stand-15-9"></td><td id="stand-15-10"></td><td id="stand-15-11"></td><td id="stand-15-12"></td><td id="stand-15-13"></td><td id="stand-15-14"></td><td id="stand-15-15"></td><td id="stand-15-16"></td><td id="stand-15-17"></td><td id="stand-15-18"></td><td id="stand-15-19"></td><td id="stand-15-20"></td><td id="stand-15-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-16-name"></td> <td id="stand-16-1"></td> <td id="stand-16-2"></td> <td id="stand-16-3"></td><td id="stand-16-4"></td><td id="stand-16-5"></td><td id="stand-16-6"></td><td id="stand-16-7"></td><td id="stand-16-8"></td><td id="stand-16-9"></td><td id="stand-16-10"></td><td id="stand-16-11"></td><td id="stand-16-12"></td><td id="stand-16-13"></td><td id="stand-16-14"></td><td id="stand-16-15"></td><td id="stand-16-16"></td><td id="stand-16-17"></td><td id="stand-16-18"></td><td id="stand-16-19"></td><td id="stand-16-20"></td><td id="stand-16-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-17-name"></td> <td id="stand-17-1"></td> <td id="stand-17-2"></td> <td id="stand-17-3"></td><td id="stand-17-4"></td><td id="stand-17-5"></td><td id="stand-17-6"></td><td id="stand-17-7"></td><td id="stand-17-8"></td><td id="stand-17-9"></td><td id="stand-17-10"></td><td id="stand-17-11"></td><td id="stand-17-12"></td><td id="stand-17-13"></td><td id="stand-17-14"></td><td id="stand-17-15"></td><td id="stand-17-16"></td><td id="stand-17-17"></td><td id="stand-17-18"></td><td id="stand-17-19"></td><td id="stand-17-20"></td><td id="stand-17-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-18-name"></td> <td id="stand-18-1"></td> <td id="stand-18-2"></td> <td id="stand-18-3"></td><td id="stand-18-4"></td><td id="stand-18-5"></td><td id="stand-18-6"></td><td id="stand-18-7"></td><td id="stand-18-8"></td><td id="stand-18-9"></td><td id="stand-18-10"></td><td id="stand-18-11"></td><td id="stand-18-12"></td><td id="stand-18-13"></td><td id="stand-18-14"></td><td id="stand-18-15"></td><td id="stand-18-16"></td><td id="stand-18-17"></td><td id="stand-18-18"></td><td id="stand-18-19"></td><td id="stand-18-20"></td><td id="stand-18-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-19-name"></td> <td id="stand-19-1"></td> <td id="stand-19-2"></td> <td id="stand-19-3"></td><td id="stand-19-4"></td><td id="stand-19-5"></td><td id="stand-19-6"></td><td id="stand-19-7"></td><td id="stand-19-8"></td><td id="stand-19-9"></td><td id="stand-19-10"></td><td id="stand-19-11"></td><td id="stand-19-12"></td><td id="stand-19-13"></td><td id="stand-19-14"></td><td id="stand-19-15"></td><td id="stand-19-16"></td><td id="stand-19-17"></td><td id="stand-19-18"></td><td id="stand-19-19"></td><td id="stand-19-20"></td><td id="stand-19-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-20-name"></td> <td id="stand-20-1"></td> <td id="stand-20-2"></td> <td id="stand-20-3"></td><td id="stand-20-4"></td><td id="stand-20-5"></td><td id="stand-20-6"></td><td id="stand-20-7"></td><td id="stand-20-8"></td><td id="stand-20-9"></td><td id="stand-20-10"></td><td id="stand-20-11"></td><td id="stand-20-12"></td><td id="stand-20-13"></td><td id="stand-20-14"></td><td id="stand-20-15"></td><td id="stand-20-16"></td><td id="stand-20-17"></td><td id="stand-20-18"></td><td id="stand-20-19"></td><td id="stand-20-20"></td><td id="stand-20-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-21-name"></td> <td id="stand-21-1"></td> <td id="stand-21-2"></td> <td id="stand-21-3"></td><td id="stand-21-4"></td><td id="stand-21-5"></td><td id="stand-21-6"></td><td id="stand-21-7"></td><td id="stand-21-8"></td><td id="stand-21-9"></td><td id="stand-21-10"></td><td id="stand-21-11"></td><td id="stand-21-12"></td><td id="stand-21-13"></td><td id="stand-21-14"></td><td id="stand-21-15"></td><td id="stand-21-16"></td><td id="stand-21-17"></td><td id="stand-21-18"></td><td id="stand-21-19"></td><td id="stand-21-20"></td><td id="stand-21-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-22-name"></td> <td id="stand-22-1"></td> <td id="stand-22-2"></td> <td id="stand-22-3"></td><td id="stand-22-4"></td><td id="stand-22-5"></td><td id="stand-22-6"></td><td id="stand-22-7"></td><td id="stand-22-8"></td><td id="stand-22-9"></td><td id="stand-22-10"></td><td id="stand-22-11"></td><td id="stand-22-12"></td><td id="stand-22-13"></td><td id="stand-22-14"></td><td id="stand-22-15"></td><td id="stand-22-16"></td><td id="stand-22-17"></td><td id="stand-22-18"></td><td id="stand-22-19"></td><td id="stand-22-20"></td><td id="stand-22-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-23-name"></td> <td id="stand-23-1"></td> <td id="stand-23-2"></td> <td id="stand-23-3"></td><td id="stand-23-4"></td><td id="stand-23-5"></td><td id="stand-23-6"></td><td id="stand-23-7"></td><td id="stand-23-8"></td><td id="stand-23-9"></td><td id="stand-23-10"></td><td id="stand-23-11"></td><td id="stand-23-12"></td><td id="stand-23-13"></td><td id="stand-23-14"></td><td id="stand-23-15"></td><td id="stand-23-16"></td><td id="stand-23-17"></td><td id="stand-23-18"></td><td id="stand-23-19"></td><td id="stand-23-20"></td><td id="stand-23-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-24-name"></td> <td id="stand-24-1"></td> <td id="stand-24-2"></td> <td id="stand-24-3"></td><td id="stand-24-4"></td><td id="stand-24-5"></td><td id="stand-24-6"></td><td id="stand-24-7"></td><td id="stand-24-8"></td><td id="stand-24-9"></td><td id="stand-24-10"></td><td id="stand-24-11"></td><td id="stand-24-12"></td><td id="stand-24-13"></td><td id="stand-24-14"></td><td id="stand-24-15"></td><td id="stand-24-16"></td><td id="stand-24-17"></td><td id="stand-24-18"></td><td id="stand-24-19"></td><td id="stand-24-20"></td><td id="stand-24-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-25-name"></td> <td id="stand-25-1"></td> <td id="stand-25-2"></td> <td id="stand-25-3"></td><td id="stand-25-4"></td><td id="stand-25-5"></td><td id="stand-25-6"></td><td id="stand-25-7"></td><td id="stand-25-8"></td><td id="stand-25-9"></td><td id="stand-25-10"></td><td id="stand-25-11"></td><td id="stand-25-12"></td><td id="stand-25-13"></td><td id="stand-25-14"></td><td id="stand-25-15"></td><td id="stand-25-16"></td><td id="stand-25-17"></td><td id="stand-25-18"></td><td id="stand-25-19"></td><td id="stand-25-20"></td><td id="stand-25-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-26-name"></td> <td id="stand-26-1"></td> <td id="stand-26-2"></td> <td id="stand-26-3"></td><td id="stand-26-4"></td><td id="stand-26-5"></td><td id="stand-26-6"></td><td id="stand-26-7"></td><td id="stand-26-8"></td><td id="stand-26-9"></td><td id="stand-26-10"></td><td id="stand-26-11"></td><td id="stand-26-12"></td><td id="stand-26-13"></td><td id="stand-26-14"></td><td id="stand-26-15"></td><td id="stand-26-16"></td><td id="stand-26-17"></td><td id="stand-26-18"></td><td id="stand-26-19"></td><td id="stand-26-20"></td><td id="stand-26-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-27-name"></td> <td id="stand-27-1"></td> <td id="stand-27-2"></td> <td id="stand-27-3"></td><td id="stand-27-4"></td><td id="stand-27-5"></td><td id="stand-27-6"></td><td id="stand-27-7"></td><td id="stand-27-8"></td><td id="stand-27-9"></td><td id="stand-27-10"></td><td id="stand-27-11"></td><td id="stand-27-12"></td><td id="stand-27-13"></td><td id="stand-27-14"></td><td id="stand-27-15"></td><td id="stand-27-16"></td><td id="stand-27-17"></td><td id="stand-27-18"></td><td id="stand-27-19"></td><td id="stand-27-20"></td><td id="stand-27-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-28-name"></td> <td id="stand-28-1"></td> <td id="stand-28-2"></td> <td id="stand-28-3"></td><td id="stand-28-4"></td><td id="stand-28-5"></td><td id="stand-28-6"></td><td id="stand-28-7"></td><td id="stand-28-8"></td><td id="stand-28-9"></td><td id="stand-28-10"></td><td id="stand-28-11"></td><td id="stand-28-12"></td><td id="stand-28-13"></td><td id="stand-28-14"></td><td id="stand-28-15"></td><td id="stand-28-16"></td><td id="stand-28-17"></td><td id="stand-28-18"></td><td id="stand-28-19"></td><td id="stand-28-20"></td><td id="stand-28-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-29-name"></td> <td id="stand-29-1"></td> <td id="stand-29-2"></td> <td id="stand-29-3"></td><td id="stand-29-4"></td><td id="stand-29-5"></td><td id="stand-29-6"></td><td id="stand-29-7"></td><td id="stand-29-8"></td><td id="stand-29-9"></td><td id="stand-29-10"></td><td id="stand-29-11"></td><td id="stand-29-12"></td><td id="stand-29-13"></td><td id="stand-29-14"></td><td id="stand-29-15"></td><td id="stand-29-16"></td><td id="stand-29-17"></td><td id="stand-29-18"></td><td id="stand-29-19"></td><td id="stand-29-20"></td><td id="stand-29-21"></td>
+						</tr>
+						<tr class="leagueLeaders">
+							<td id="stand-30-name"></td> <td id="stand-30-1"></td> <td id="stand-30-2"></td> <td id="stand-30-3"></td><td id="stand-30-4"></td><td id="stand-30-5"></td><td id="stand-30-6"></td><td id="stand-30-7"></td><td id="stand-30-8"></td><td id="stand-30-9"></td><td id="stand-30-10"></td><td id="stand-30-11"></td><td id="stand-30-12"></td><td id="stand-30-13"></td><td id="stand-30-14"></td><td id="stand-30-15"></td><td id="stand-30-16"></td><td id="stand-30-17"></td><td id="stand-30-18"></td><td id="stand-30-19"></td><td id="stand-30-20"></td><td id="stand-30-21"></td>
+						</tr>
+					</thead>
+				</table>
+					
+				</div>
+			</div>
 			
+			<!--  PLAYOFF MODAL -->
+			<div class="playoffModal">
+				<div class="playoff-modal-content">
+					<span class="close" onclick="closePlayoffModal()">&times;</span>
+					<br>
+					<h3 class="playoffModalTitle">PLAYOFF GAMES</h3>
+					
+					<label style="position: absolute; left: 45%;" for="playoffYear">YEAR:</label>
+					<select id="playoffYearSelect" onchange="playoffInformationByYear(this)"style="position: absolute; left: 49%;" name="cars" id="cars">
+					</select>
+					<br></br>
+					
+					<input type="button" class="btnSimPlayIn" value="SIM PLAY-IN"/> 
+					<input type="button" class="btnSimQuarterFinal" value="SIM QUARTER FINALS"/> 
+					<input type="button" class="btnSimConferenceSemiFinal" value="SIM SEMI FINALS"/> 
+					<input type="button" class="btnSimConferenceFinal" value="SIM CONFERENCE FINALS"/> 
+					<input type="button" class="btnSimFinal" value="SIM FINALS"/> 
+					<br></br>
+					<!-- PLAY IN WEST -->
+					<p style="position: absolute; top: 200px; left: 300px; font-family: Lucida Console;"> West Play-in games </p>
+					<table class="playInWest-9and10"> 
+						<tr title="9th-seed">
+							<td class="seedNumber west-9">9</td><td class="teamNamePlayoff westPlayInName-9"></td><td class="seriesResult west-9-result"></td>
+						</tr>
+						<tr title="10th-seed">
+							<td class="seedNumber west-10">10</td><td class="teamNamePlayoff westPlayInName-10"></td><td class="seriesResult west-10-result"></td>
+						</tr>
+					</table>
+					<br></br>
+					<table class="playInWest-7and8"> 
+						<tr title="7th-seed">
+							<td class="seedNumber west-7">7</td><td class="teamNamePlayoff westPlayInName-7"></td><td class="seriesResult west-7-result"></td>
+						</tr>
+						<tr title="8th-seed">
+							<td class="seedNumber west-8">8</td><td class="teamNamePlayoff westPlayInName-8"></td><td class="seriesResult west-8-result"></td>
+						</tr>
+					</table>
+					<!-- PLAY IN EAST -->
+					<p style="position: absolute; top: 200px; right: 300px; font-family: Lucida Console;"> East Play-in games </p>
+					<table class="playInEast-9and10"> 
+						<tr title="9th-seed">
+							<td class="seedNumber east-9">9</td><td class="teamNamePlayoff eastPlayInName-9"></td><td class="seriesResult  east-9-result"></td>
+						</tr>
+						<tr title="10th-seed">
+							<td class="seedNumber east-10">10</td><td class="teamNamePlayoff eastPlayInName-10"></td><td class="seriesResult  east-10-result"></td>
+						</tr>
+					</table>
+					<br></br>
+					<table class="playInEast-7and8"> 
+						<tr title="7th-seed">
+							<td class="seedNumber east-7">7</td><td class="teamNamePlayoff eastPlayInName-7"></td><td class="seriesResult  east-7-result"></td>
+						</tr>
+						<tr title="8th-seed">
+							<td class="seedNumber east-8">8</td><td class="teamNamePlayoff eastPlayInName-8"></td><td class="seriesResult  east-8-result"></td>
+						</tr>
+					</table>
+					<br></br>
+					<!-- PLAY-IN FINAL WEST -->
+					<p style="position: absolute; top: 325px; left: 270px; font-family: Lucida Console;"> West Play-in final game </p>
+					<table class="playInWestFinal"> 
+						<tr title="playInFinalWest">
+							<td class="seedNumber westPlayInFinalSeed-1"></td><td class="teamNamePlayoff westPlayInFinalName-1"></td><td class="seriesResult  westPlayInFinalName-1-result"></td>
+						</tr>
+						<tr title="playInFinalWest">
+							<td class="seedNumber westPlayInFinalSeed-2"></td><td class="teamNamePlayoff westPlayInFinalName-2"></td><td class="seriesResult  westPlayInFinalName-2-result"></td>
+						</tr>
+					</table>
+					
+					<!-- PLAY-IN FINAL EAST -->
+					<p style="position: absolute; top: 325px; right: 270px; font-family: Lucida Console;"> East Play-in final game </p>
+					<table class="playInEastFinal"> 
+						<tr title="playInEastFinal">
+							<td class="seedNumber eastPlayInFinalSeed-1"></td><td class="teamNamePlayoff eastPlayInFinalName-1"></td><td class="seriesResult  eastPlayInFinalName-1-result"></td>
+						</tr>
+						<tr title="playInEastFinal">
+							<td class="seedNumber eastPlayInFinalSeed-2"></td><td class="teamNamePlayoff eastPlayInFinalName-2"></td><td class="seriesResult  eastPlayInFinalName-2-result"></td>
+						</tr>
+					</table>
+					<br></br>
+					
+					<br></br>
+					<!-- PLAYOFF WEST GAMES-->
+					<p style="position: absolute; top: 400px; left: 300px; font-family: Lucida Console;"> Western conference </p>
+					<table class="west-1and8"> 
+						<tr title="1th-seed"> <td class="seedNumber west-1">1</td><td class="teamNamePlayoff westName-1"></td><td class="seriesResult westWins-1"></td> </tr>
+						<tr title="8th-seed"> <td class="seedNumber west-8">8</td><td class="teamNamePlayoff westName-8"></td><td class="seriesResult westWins-8"></td> </tr>
+					</table>
+					<br></br>
+					<table class="west-4and5"> 
+						<tr title="4th-seed"> <td class="seedNumber west-4">4</td><td class="teamNamePlayoff westName-4"></td><td class="seriesResult westWins-4"></td> </tr>
+						<tr title="5th-seed"> <td class="seedNumber west-5">5</td><td class="teamNamePlayoff westName-5"></td><td class="seriesResult westWins-5"></td> </tr>
+					</table>
+					<table class="west-3and6"> 
+						<tr title="3th-seed"> <td class="seedNumber west-3">3</td><td class="teamNamePlayoff westName-3"></td><td class="seriesResult westWins-3"></td> </tr>
+						<tr title="6th-seed"> <td class="seedNumber west-6">6</td><td class="teamNamePlayoff westName-6"></td><td class="seriesResult westWins-6"></td> </tr>
+					</table>
+					<table class="west-2and7"> 
+						<tr title="2th-seed"> <td class="seedNumber west-2">2</td><td class="teamNamePlayoff westName-2"></td><td class="seriesResult westWins-2"></td> </tr>
+						<tr title="7th-seed"> <td class="seedNumber west-7">7</td><td class="teamNamePlayoff westName-7"></td><td class="seriesResult westWins-7"></td> </tr>
+					</table>
+					
+					<!-- PLAYOFF EAST GAMES-->
+					<p style="position: absolute; top: 400px; right: 300px; font-family: Lucida Console;"> Eastern conference </p>
+					<table class="east-1and8"> 
+						<tr title="1th-seed"> <td class="seedNumber east-1">1</td><td class="teamNamePlayoff eastName-1"></td><td class="seriesResult eastWins-1"></td> </tr>
+						<tr title="8th-seed"> <td class="seedNumber east-8">8</td><td class="teamNamePlayoff eastName-8"></td><td class="seriesResult eastWins-8"></td> </tr>
+					</table>
+					<br></br>
+					<table class="east-4and5"> 
+						<tr title="4th-seed"> <td class="seedNumber east-4">4</td><td class="teamNamePlayoff eastName-4"></td><td class="seriesResult eastWins-4"></td> </tr>
+						<tr title="5th-seed"> <td class="seedNumber east-5">5</td><td class="teamNamePlayoff eastName-5"></td><td class="seriesResult eastWins-5"></td> </tr>
+					</table>
+					<table class="east-3and6"> 
+						<tr title="3th-seed"> <td class="seedNumber east-3">3</td><td class="teamNamePlayoff eastName-3"></td><td class="seriesResult eastWins-3"></td> </tr>
+						<tr title="6th-seed"> <td class="seedNumber east-6">6</td><td class="teamNamePlayoff eastName-6"></td><td class="seriesResult eastWins-6"></td> </tr>
+					</table>
+					<table class="east-2and7"> 
+						<tr title="2th-seed"> <td class="seedNumber east-2">2</td><td class="teamNamePlayoff eastName-2"></td><td class="seriesResult eastWins-2"></td> </tr>
+						<tr title="7th-seed"> <td class="seedNumber east-7">7</td><td class="teamNamePlayoff eastName-7"></td><td class="seriesResult eastWins-7"></td> </tr>
+					</table>
+					
+					<!-- WEST SEMI FINAL GAMES-->
+					<p style="position: absolute; top: 595px; left: 300px; font-family: Lucida Console;"> Western Semi Finals </p>
+					<table class="west-semi-1"> 
+						<tr title="semi-1-team"> <td class="seedNumber west-sf-1"></td><td class="teamNamePlayoff westName-sf-1"></td><td class="seriesResult westWins-sf-1"></td> </tr>
+						<tr title="semi-2-team"> <td class="seedNumber west-sf-2"></td><td class="teamNamePlayoff westName-sf-2"></td><td class="seriesResult westWins-sf-2"></td> </tr>
+					</table>
+					<br></br>
+					<table class="west-semi-2"> 
+						<tr title="semi-3-team"> <td class="seedNumber west-sf-3"></td><td class="teamNamePlayoff westName-sf-3"></td><td class="seriesResult westWins-sf-3"></td> </tr>
+						<tr title="semi-4-team"> <td class="seedNumber west-sf-4"></td><td class="teamNamePlayoff westName-sf-4"></td><td class="seriesResult westWins-sf-4"></td> </tr>
+					</table>
+					<!-- EAST SEMI FINAL GAMES-->
+					<p style="position: absolute; top: 595px; right: 300px; font-family: Lucida Console;"> Eastern Semi Finals </p>
+					<table class="east-semi-1"> 
+						<tr title="semi-1-team"> <td class="seedNumber east-sf-1"></td><td class="teamNamePlayoff eastName-sf-1"></td><td class="seriesResult eastWins-sf-1"></td> </tr>
+						<tr title="semi-2-team"> <td class="seedNumber east-sf-2"></td><td class="teamNamePlayoff eastName-sf-2"></td><td class="seriesResult eastWins-sf-2"></td> </tr>
+					</table>
+					<br></br>
+					<table class="east-semi-2"> 
+						<tr title="semi-3-team"> <td class="seedNumber east-sf-3"></td><td class="teamNamePlayoff eastName-sf-3"></td><td class="seriesResult eastWins-sf-3"></td> </tr>
+						<tr title="semi-4-team"> <td class="seedNumber east-sf-4"></td><td class="teamNamePlayoff eastName-sf-4"></td><td class="seriesResult eastWins-sf-4"></td> </tr>
+					</table>
+					
+					<!-- WEST CONFERENCE FINAL GAMES-->
+					<p style="position: absolute; top: 710px; left: 300px; font-family: Lucida Console;"> Western Finals </p>
+					<table class="west-final"> 
+						<tr title="west-final-1-team"> <td class="seedNumber west-cf-1"></td><td class="teamNamePlayoff westName-cf-1"></td><td class="seriesResult westWins-cf-1"></td> </tr>
+						<tr title="west-final-2-team"> <td class="seedNumber west-cf-2"></td><td class="teamNamePlayoff westName-cf-2"></td><td class="seriesResult westWins-cf-2"></td> </tr>
+					</table>
+					<!-- EAST CONFERENCE FINAL GAMES-->
+					<p style="position: absolute; top: 710px; right: 300px; font-family: Lucida Console;"> Eastern Finals </p>
+					<table class="east-final"> 
+						<tr title="east-final-1-team"> <td class="seedNumber east-cf-1"></td><td class="teamNamePlayoff eastName-cf-1"></td><td class="seriesResult eastWins-cf-1"></td> </tr>
+						<tr title="east-final-2-team"> <td class="seedNumber east-cf-2"></td><td class="teamNamePlayoff eastName-cf-2"></td><td class="seriesResult eastWins-cf-2"></td> </tr>
+					</table>
+					
+					<!-- NBA FINAL GAMES-->
+					<p style="position: absolute; top: 790px; left: 47%; font-family: Lucida Console;"> NBA FINALS </p>
+					<table class="nba-final"> 
+						<tr title="nba-final-1-team" class="nba-final-row"> <td class="seedNumber nbaFinal-1"></td><td class="teamNamePlayoff nbaFinalName-1"></td><td class="seriesResult nbaFinalWins-1"></td> </tr>
+						<tr title="nba-final-2-team" class="nba-final-row"> <td class="seedNumber nbaFinal-2"></td><td class="teamNamePlayoff nbaFinalName-2"></td><td class="seriesResult nbaFinalWins-2"></td> </tr>
+					</table>
+					<p style="position: absolute; top: 930px; text-align: center; left: 50%; transform: translateX(-50%); font-family: Lucida Console;" class="nbaChampionText"> NBA CHAMPIONS TEXT </p>
+					<br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br>
+				</div>
+			</div>
+			
+			<!--- RETIRED PLAYER LIST MODAL WINDOW  -->
+			<div class="retiredPlayerModal">
+				<div class="retired-modal-content">
+					<span class="close" onclick="closeRetiredModal()">&times;</span>
+					<br>
+					<h3 class="retiredModalTitle">RETIRED PLAYERS</h3>
+					
+					<label style="position: absolute; left: 45%;" for="playoffYear">YEAR:</label>
+					<!-- <select id="playoffYearSelect" onchange="playoffInformationByYear(this)"style="position: absolute; left: 49%;" name="cars" id="cars">  -->
+					<select id="retiredYearSelect" onchange="retiredInformationByYear(this)"style="position: absolute; left: 49%;" name="retired players" >
+					</select>
+					<br></br>
+					
+					<table class="retiredTable" id="retiredPlayerTable">
+						<tr>
+							<th>Player Name</th>
+							<th>Age</th>
+							<th>Overal</th>
+						</tr>
+					</table>
+					</div>
+				</div>
+			</div>
+			
+			<!--- MOCK DRAFT MODAL WINDOW  -->
+			<div class="mockDraftModal">
+				<div class="mockDraft-modal-content">
+					<span class="close" onclick="closeMockDraftModal()">&times;</span>
+					<br>
+					<h3 class="mockDraftModalTitle">NBA DRAFT</h3>
+					
+					<label style="position: absolute; left: 47%; transform: translateX(-50%);" for="playoffYear">YEAR:</label>
+					<select id="mockDraftYearSelect" onchange="mockDraftByYear(this)" style="position: absolute; left: 51%; transform: translateX(-50%);" name="mock draft players" >
+					</select>
+					
+					<input type="button" class="btn-simDraft" style="position: relative; top: 10%;  left: 3%; height: 50px; background-color: white; font-weight: 900; " value="START DRAFT" onclick="draftRookies()">
+					<table class="mockDraftTable" id="mockDraftPlayerTable">
+						<tr>
+							<th>Num</th>
+							<th class="mock-name">Player Name</th>
+							<th>Age</th>
+							<th>Overal</th>
+							<th>Pr. Pos</th>
+							<th>Se. Pos</th>
+							<th>Country</th>
+							<th>INS</th> <th>PT2</th> <th>PT3</th> <th>FTR</th> <th>JUM</th> <th>STR</th> <th>SPE</th> <th>QUI</th> <th>DRI</th> <th>PAS</th> <th>ORE</th> <th>DRE</th> <th>OAW</th> <th>DAW</th> <th>BLK</th> <th>STL</th> <th>END</th> <th>INJ</th> <th>POT</th>
+							<th>Pick</th>
+							<th>Team</th>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<!--- NBA TRADES MODAL --->
+			<div class="tradesModal">
+				<div class="tradesModal-content">
+					<span class="close" onclick="closeTradesModal()">&times;</span>
+					<br>
+					<h3 class="tradesModalTitle">NBA TRADE HISTORY</h3>
+					<div class="playerTrades"></div>
+			
+				</div>
+			</div>
+			
+			<!-- NBA TEAM UPGRADES POINTS -->
+			<div class="teamUpgradeModal">
+				<div class="teamUpgradeModal-content">
+					<span class="close" onclick="closeUpgradeModal()">&times;</span>
+					<br>
+					<h3 class="teamUpgradeTitle">NBA TEAM UPGRADES</h3>
+					<div class="teamUpgrade-rows">
+						<div class="teamUprade-columns"> 
+							<div class="teamUprade-col-content"> </div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Offense<br>skills
+								<span class="tooltiptext">+1 to +5 increase in offensive skills for each team player:<br><br>Offensive awareness<br>Offensive rebounds<br>Passing<br>Dribble</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Defence<br>skills
+								<span class="tooltiptext">+1 to +5 increase in defensive skills for each team player:<br><br>Defensive awareness<br>Defensive rebounds<br>Block<br>Steal</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Shooting<br>skills
+								<span class="tooltiptext">+1 to +5 increase in shooting skills for each team player:<br><br>Inside shot<br>2 point shot<br>3 point shot<br>Free throw</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Physical<br>skills
+								<span class="tooltiptext">+1 to +5 increase in physical skills for each team player:<br><br>Jumping<br>Strength<br>Speed<br>Quickness<br>Endurance</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Rookie<br>boost
+								<span class="tooltiptext">+5 to +25 increase in random skills for each rookie drafted</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Attack<br>boost
+								<span class="tooltiptext">+1 to +5 extra attacks in each game</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Defence<br>boost
+								<span class="tooltiptext">+1 to +5 extra defensive stops in each game</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Trade<br>boost
+								<span class="tooltiptext">+1 to +5 potential trade overal point increase in each trade</span>
+							</div>
+							<div class="teamUprade-col-content teamUpgrade-heading tooltip">Country<br>boost
+								<span class="tooltiptext">+1 to +5 country basketball popularity and player quality increase</span>
+							</div>
+							<div class="teamUprade-col-content" style="padding-top: 17px">TOTAL<br>POINTS</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design"> 
+							<div class="teamUprade-col-content">ATLANTA<br>HAWKS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-0-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">BOSTON<br>CELTICS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-1-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">BROOKLYN<br>NETS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-2-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">CHARLOTTE<br>HORNETS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-3-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">CHICAGO<br>BULLS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-4-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">CLEVELAND<br>CAVALIERS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-5-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">DALLAS<br>MAVERICKS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-6-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">DENVER<br>NUGGETS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-7-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">DETROIT<br>PISTONS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-8-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">GOLDEN STATE<br>WARRIORS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-9-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">HOUSTON<br>ROCKETS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-10-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">INDIANA<br>PACERS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-11-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">LOS ANGELES<br>CLIPPERS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-12-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">LOS ANGELES<br>LAKERS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-13-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">MEMPHIS<br>GRIZZLIES</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-14-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">MIAMI<br>HEAT</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-15-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">MILWAUKEE<br>BUCKS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-16-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">MINNESOTA<br>TIMBERWOLVES</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-17-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">NEW ORLEANS<br>PELICANS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-18-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">NEW YORK<br>KNICKS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-19-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">OKLAHOMA<br>THUNDER</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-20-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">ORLANDO<br>MAGIC</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-21-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">PHILADELPHIA<br>76ERS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-22-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">PHOENIX<br>SUNS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-23-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">PORTLAND<br>TRAIL BLAZERS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-24-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">SACRAMENTO<br>KINGS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-25-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">SAN ANTONIO<br>SPURS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-26-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">TORONTO<br>RAPTORS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-27-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">UTAH<br>JAZZ</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-28-total">0</div>
+						</div>
+						<div class="teamUprade-columns teamUpgrade-column-design">
+							<div class="teamUprade-col-content">WASHINGTON<br>WIZARDS</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-0">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-1">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-2">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-3">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-4">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-5">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-6">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-7">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-8">0</div>
+							<div class="teamUprade-col-content teamUpgrade-rowDesign" id="teamUpgrade-29-total">0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- USER NBA TEAM SELECT -->
+			<div class="teamSelectModal">
+				<div class="teamSelectModal-content">
+					<h3 class="teamSelectTitle">SELECT YOUR NBA DYNASTY</h3>
+					<div class="selectTeam-row">
+						<div class="selectTeam-column">
+							<img class="teamSelect-logo" src="images/team-roster-icon-1.png" onclick="selectUserTeam(0)" onmousemove="showTeamInfo(0)"> 
+							<img class="teamSelect-logo" src="images/team-roster-icon-2.png" onclick="selectUserTeam(1)" onmousemove="showTeamInfo(1)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-3.png" onclick="selectUserTeam(2)" onmousemove="showTeamInfo(2)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-4.png" onclick="selectUserTeam(3)" onmousemove="showTeamInfo(3)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-5.png" onclick="selectUserTeam(4)" onmousemove="showTeamInfo(4)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-6.png" onclick="selectUserTeam(5)" onmousemove="showTeamInfo(5)">
+						</div>
+						<div class="selectTeam-column">
+							<img class="teamSelect-logo" src="images/team-roster-icon-7.png" onclick="selectUserTeam(6)" onmousemove="showTeamInfo(6)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-8.png" onclick="selectUserTeam(7)" onmousemove="showTeamInfo(7)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-9.png" onclick="selectUserTeam(8)" onmousemove="showTeamInfo(8)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-10.png" onclick="selectUserTeam(9)" onmousemove="showTeamInfo(9)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-11.png" onclick="selectUserTeam(10)" onmousemove="showTeamInfo(10)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-12.png" onclick="selectUserTeam(11)" onmousemove="showTeamInfo(11)">
+						</div>
+						<div class="selectTeam-column">
+							<img class="teamSelect-logo" src="images/team-roster-icon-13.png" onclick="selectUserTeam(12)" onmousemove="showTeamInfo(12)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-14.png" onclick="selectUserTeam(13)" onmousemove="showTeamInfo(13)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-15.png" onclick="selectUserTeam(14)" onmousemove="showTeamInfo(14)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-16.png" onclick="selectUserTeam(15)" onmousemove="showTeamInfo(15)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-17.png" onclick="selectUserTeam(16)" onmousemove="showTeamInfo(16)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-18.png" onclick="selectUserTeam(17)" onmousemove="showTeamInfo(17)">
+						</div>
+						<div class="selectTeam-column">
+							<img class="teamSelect-logo" src="images/team-roster-icon-19.png" onclick="selectUserTeam(18)" onmousemove="showTeamInfo(18)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-20.png" onclick="selectUserTeam(19)" onmousemove="showTeamInfo(19)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-21.png" onclick="selectUserTeam(20)" onmousemove="showTeamInfo(20)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-22.png" onclick="selectUserTeam(21)" onmousemove="showTeamInfo(21)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-23.png" onclick="selectUserTeam(22)" onmousemove="showTeamInfo(22)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-24.png" onclick="selectUserTeam(23)" onmousemove="showTeamInfo(23)">
+						</div>
+						<div class="selectTeam-column">
+							<img class="teamSelect-logo" src="images/team-roster-icon-25.png" onclick="selectUserTeam(24)" onmousemove="showTeamInfo(24)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-26.png" onclick="selectUserTeam(25)" onmousemove="showTeamInfo(25)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-27.png" onclick="selectUserTeam(26)" onmousemove="showTeamInfo(26)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-28.png" onclick="selectUserTeam(27)" onmousemove="showTeamInfo(27)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-29.png" onclick="selectUserTeam(28)" onmousemove="showTeamInfo(28)">
+							<img class="teamSelect-logo" src="images/team-roster-icon-30.png" onclick="selectUserTeam(29)" onmousemove="showTeamInfo(29)">
+						</div>
+						<div style="height: 400px;">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- A modal with general team ifnormation - displayed when team icon is hovered in page startup -->
+			<div class="teamSelectInfoModal">
+				<div class="teamSelectInfoModal-content">
+					<div id="teamSelectInfo-rows">
+						<div class="teamSelectInfo-rows-content" id="teamInfoName">Team name</div>
+						<div class="teamSelectInfo-rows-content" id="teamInfoOveral">Team overal:</div>
+						<div class="teamSelectInfo-rows-content" id="teamInfoOfense">Team offense:</div>
+						<div class="teamSelectInfo-rows-content" id="teamInfoDefense">Team Defence</div>
+						<div class="teamSelectInfo-rows-content" id="teamInfoName">NBA titles: </div>
+						<div class="teamInfoPlayerData-container">
+							<div class="teamInfoPlayerData">
+								<div class="teamInfoPlayerData-heading" style="width: 50%;">Player name</div>
+								<div class="teamInfoPlayerData-heading" style="width: 25%;">Player overal</div>
+								<div class="teamInfoPlayerData-heading" style="width: 25%;">Player Age</div>
+							</div>
+							<div class="teamInfoPlayerData">
+								<div class="teamInfoPlayerData-content" id="teamInfoPlayerName" style="width: 50%;">Player Name</div>
+								<div class="teamInfoPlayerData-content" id="teamInfoPlayerOveral"  style="width: 25%;">Player Overal</div>
+								<div class="teamInfoPlayerData-content" id="teamInfoPlayerAge" style="width: 25%;">Player Age</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- A modal that displays available Rookies for player's team to draft. It is displayed when player's team need to make a draft pick    -->
+			<div class="draftRookieModal">
+				<div class="draftRookieModal-content">
+					<h3 class="draftRookieTitle">SELECT YOUR ROOKIE</h3>
+					
+					<div class="draftRookie-rows-header">
+						<div class="draftRookie-columns-header"  style="background-color: #d9d4d4;"> 
+							<div class="draftRookie-col-content"> Pick Nr </div>
+							<div class="draftRookie-col-content"> Name </div>
+							<div class="draftRookie-col-content"> Overal </div>
+							<div class="draftRookie-col-content"> Age </div>
+							<div class="draftRookie-col-content"> Prim. Pos. </div>
+							<div class="draftRookie-col-content"> Sec. Pos. </div>
+							<div class="draftRookie-col-content"> Country </div>
+						</div>
+					</div>
+					
+					<div class="draftRookie-rows">
+						<div class="draftRookie-columns"  style="background-color: #d9d4d4;"> 
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--- USER NBA TRADES MODAL --->
+			<div class="userTradesModal">
+				<div class="userTradesModal-content">
+					<span class="close" onclick="closeUserTradesModal()">&times;</span>
+					<br>
+					<h3 class="userTradesModalTitle">TRADE PLAYERS</h3>
+					<div class="userTradeGroupsCol">
+						<div class="userTradeGroupsRow">
+							<div class="userTradeGroups userTradeGroups-upperSection">
+								<div class="userTrades-teamNameButtons" style="margin-left: 25%;">
+									<img src="images/arrow-left.png"  style="width: 60px;" onclick="prevousTeamTrades(0)" >
+									<!-- <img src=""  style="width: 60px;" >  -->
+									<img class="logo-userTrades-0" src="images/team-roster-icon-1.png" style="width: 100px; margin: 0 30px 0 30px">
+									<img src="images/arrow-right.png"  style="width: 60px;" onclick="nextTeamTrades(0)" >
+									<img id="trade-user-logo" src=""  style="width: 7%; height: 7%; margin-top: 4%; margin-left: 20%;" >
+								</div>
+								<div class="userTrades-allPlayers">
+									<div class="userTrades-allPlayers-headings">
+										<div style="width: 40%;">Player name</div>
+										<div style="width: 10%;">Overal</div>
+										<div style="width: 10%;">Age</div>
+										<div style="width: 10%;">Prim. Pos.</div>
+										<div style="width: 10%;">Sec. Pos.</div>
+										<div style="width: 20%;">Country</div>
+									</div>
+									<div class="line"></div>
+									<div class="userTrades-allPlayers-info userTrades-roster-1" onclick="addForTrade(1,1)">
+										<div class="userTrades-info-name ut-name-1-1">Player name</div> <div class="userTrades-info-10 ut-over-1-1">Overal</div> <div class="userTrades-info-10 ut-age-1-1">Age</div> <div class="userTrades-info-10 ut-priPos-1-1">PG</div> <div class="userTrades-info-10 ut-secPos-1-1">SG</div> <div class="userTrades-info-20 ut-country-1-1">Country</div>
+									</div>
+									<div class="userTrades-allPlayers-info userTrades-roster-2" onclick="addForTrade(1,2)"> 
+										<div class="userTrades-info-name ut-name-1-2">Player name</div> <div class="userTrades-info-10 ut-over-1-2">Overal</div> <div class="userTrades-info-10 ut-age-1-2">Age</div> <div class="userTrades-info-10 ut-priPos-1-2">PG</div> <div class="userTrades-info-10 ut-secPos-1-2">SG</div> <div class="userTrades-info-20 ut-country-1-2">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-3" onclick="addForTrade(1,3)"> 
+										<div class="userTrades-info-name ut-name-1-3">Player name</div> <div class="userTrades-info-10 ut-over-1-3">Overal</div> <div class="userTrades-info-10 ut-age-1-3">Age</div> <div class="userTrades-info-10 ut-priPos-1-3">PG</div> <div class="userTrades-info-10 ut-secPos-1-3">SG</div> <div class="userTrades-info-20 ut-country-1-3">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-4" onclick="addForTrade(1,4)"> 
+										<div class="userTrades-info-name ut-name-1-4">Player name</div> <div class="userTrades-info-10 ut-over-1-4">Overal</div> <div class="userTrades-info-10 ut-age-1-4">Age</div> <div class="userTrades-info-10 ut-priPos-1-4">PG</div> <div class="userTrades-info-10 ut-secPos-1-4">SG</div> <div class="userTrades-info-20 ut-country-1-4">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-5" onclick="addForTrade(1,5)"> 
+										<div class="userTrades-info-name ut-name-1-5">Player name</div> <div class="userTrades-info-10 ut-over-1-5">Overal</div> <div class="userTrades-info-10 ut-age-1-5">Age</div> <div class="userTrades-info-10 ut-priPos-1-5">PG</div> <div class="userTrades-info-10 ut-secPos-1-5">SG</div> <div class="userTrades-info-20 ut-country-1-5">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-6" onclick="addForTrade(1,6)"> 
+										<div class="userTrades-info-name ut-name-1-6">Player name</div> <div class="userTrades-info-10 ut-over-1-6">Overal</div> <div class="userTrades-info-10 ut-age-1-6">Age</div> <div class="userTrades-info-10 ut-priPos-1-6">PG</div> <div class="userTrades-info-10 ut-secPos-1-6">SG</div> <div class="userTrades-info-20 ut-country-1-6">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-7" onclick="addForTrade(1,7)"> 
+										<div class="userTrades-info-name ut-name-1-7">Player name</div> <div class="userTrades-info-10 ut-over-1-7">Overal</div> <div class="userTrades-info-10 ut-age-1-7">Age</div> <div class="userTrades-info-10 ut-priPos-1-7">PG</div> <div class="userTrades-info-10 ut-secPos-1-7">SG</div> <div class="userTrades-info-20 ut-country-1-7">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-8" onclick="addForTrade(1,8)"> 
+										<div class="userTrades-info-name ut-name-1-8">Player name</div> <div class="userTrades-info-10 ut-over-1-8">Overal</div> <div class="userTrades-info-10 ut-age-1-8">Age</div> <div class="userTrades-info-10 ut-priPos-1-8">PG</div> <div class="userTrades-info-10 ut-secPos-1-8">SG</div> <div class="userTrades-info-20 ut-country-1-8">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-9" onclick="addForTrade(1,9)"> 
+										<div class="userTrades-info-name ut-name-1-9">Player name</div> <div class="userTrades-info-10 ut-over-1-9">Overal</div> <div class="userTrades-info-10 ut-age-1-9">Age</div> <div class="userTrades-info-10 ut-priPos-1-9">PG</div> <div class="userTrades-info-10 ut-secPos-1-9">SG</div> <div class="userTrades-info-20 ut-country-1-9">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-10" onclick="addForTrade(1,10)"> 
+										<div class="userTrades-info-name ut-name-1-10">Player name</div> <div class="userTrades-info-10 ut-over-1-10">Overal</div> <div class="userTrades-info-10 ut-age-1-10">Age</div> <div class="userTrades-info-10 ut-priPos-1-10">PG</div> <div class="userTrades-info-10 ut-secPos-1-10">SG</div> <div class="userTrades-info-20 ut-country-1-10">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-11" onclick="addForTrade(1,11)"> 
+										<div class="userTrades-info-name ut-name-1-11">Player name</div> <div class="userTrades-info-10 ut-over-1-11">Overal</div> <div class="userTrades-info-10 ut-age-1-11">Age</div> <div class="userTrades-info-10 ut-priPos-1-11">PG</div> <div class="userTrades-info-10 ut-secPos-1-11">SG</div> <div class="userTrades-info-20 ut-country-1-11">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-12" onclick="addForTrade(1,12)"> 
+										<div class="userTrades-info-name ut-name-1-12">Player name</div> <div class="userTrades-info-10 ut-over-1-12">Overal</div> <div class="userTrades-info-10 ut-age-1-12">Age</div> <div class="userTrades-info-10 ut-priPos-1-12">PG</div> <div class="userTrades-info-10 ut-secPos-1-12">SG</div> <div class="userTrades-info-20 ut-country-1-12">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-13" onclick="addForTrade(1,13)"> 
+										<div class="userTrades-info-name ut-name-1-13">Player name</div> <div class="userTrades-info-10 ut-over-1-13">Overal</div> <div class="userTrades-info-10 ut-age-1-13">Age</div> <div class="userTrades-info-10 ut-priPos-1-13">PG</div> <div class="userTrades-info-10 ut-secPos-1-13">SG</div> <div class="userTrades-info-20 ut-country-1-13">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-14" onclick="addForTrade(1,14)"> 
+										<div class="userTrades-info-name ut-name-1-14">Player name</div> <div class="userTrades-info-10 ut-over-1-14">Overal</div> <div class="userTrades-info-10 ut-age-1-14">Age</div> <div class="userTrades-info-10 ut-priPos-1-14">PG</div> <div class="userTrades-info-10 ut-secPos-1-14">SG</div> <div class="userTrades-info-20 ut-country-1-14">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-15" onclick="addForTrade(1,15)"> 
+										<div class="userTrades-info-name ut-name-1-15">Player name</div> <div class="userTrades-info-10 ut-over-1-15">Overal</div> <div class="userTrades-info-10 ut-age-1-15">Age</div> <div class="userTrades-info-10 ut-priPos-1-15">PG</div> <div class="userTrades-info-10 ut-secPos-1-15">SG</div> <div class="userTrades-info-20 ut-country-1-15">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-16" onclick="addForTrade(1,16)"> 
+										<div class="userTrades-info-name ut-name-1-16">Player name</div> <div class="userTrades-info-10 ut-over-1-16">Overal</div> <div class="userTrades-info-10 ut-age-1-16">Age</div> <div class="userTrades-info-10 ut-priPos-1-16">PG</div> <div class="userTrades-info-10 ut-secPos-1-16">SG</div> <div class="userTrades-info-20 ut-country-1-16">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-17" onclick="addForTrade(1,17)"> 
+										<div class="userTrades-info-name ut-name-1-17">Player name</div> <div class="userTrades-info-10 ut-over-1-17">Overal</div> <div class="userTrades-info-10 ut-age-1-17">Age</div> <div class="userTrades-info-10 ut-priPos-1-17">PG</div> <div class="userTrades-info-10 ut-secPos-1-17">SG</div> <div class="userTrades-info-20 ut-country-1-17">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-18" onclick="addForTrade(1,18)"> 
+										<div class="userTrades-info-name ut-name-1-18">Player name</div> <div class="userTrades-info-10 ut-over-1-18">Overal</div> <div class="userTrades-info-10 ut-age-1-18">Age</div> <div class="userTrades-info-10 ut-priPos-1-18">PG</div> <div class="userTrades-info-10 ut-secPos-1-18">SG</div> <div class="userTrades-info-20 ut-country-1-18">Country</div>
+									</div>
+								</div>
+							</div>
+							<div class="userTradeGroups" style="margin-top: 30px;">
+								<div class="userTrades-allPlayers-headings">
+										<div style="width: 40%;">Player name</div>
+										<div style="width: 10%;">Overal</div>
+										<div style="width: 10%;">Age</div>
+										<div style="width: 10%;">Prim. Pos.</div>
+										<div style="width: 10%;">Sec. Pos.</div>
+										<div style="width: 20%;">Country</div>
+								</div>
+								<div class="line"></div>
+								<div class="userTrades-selectedPlayers" onclick="clearPlayerTradeList(1,1)">
+									<div class="userTrades-info-name utSel-name-1-1">-----</div> <div class="userTrades-info-10 utSel-over-1-1"></div> <div class="userTrades-info-10 utSel-age-1-1"></div> <div class="userTrades-info-10 utSel-priPos-1-1"></div> <div class="userTrades-info-10 utSel-secPos-1-1"></div> <div class="userTrades-info-20 utSel-country-1-1"></div>
+								</div>
+								<div class="userTrades-selectedPlayers" onclick="clearPlayerTradeList(1,2)">
+									<div class="userTrades-info-name utSel-name-1-2">-----</div> <div class="userTrades-info-10 utSel-over-1-2"></div> <div class="userTrades-info-10 utSel-age-1-2"></div> <div class="userTrades-info-10 utSel-priPos-1-2"></div> <div class="userTrades-info-10 utSel-secPos-1-2"></div> <div class="userTrades-info-20 utSel-country-1-2"></div>
+								</div>
+								<div class="userTrades-selectedPlayers" onclick="clearPlayerTradeList(1,3)">
+									<div class="userTrades-info-name utSel-name-1-3">-----</div> <div class="userTrades-info-10 utSel-over-1-3"></div> <div class="userTrades-info-10 utSel-age-1-3"></div> <div class="userTrades-info-10 utSel-priPos-1-3"></div> <div class="userTrades-info-10 utSel-secPos-1-3"></div> <div class="userTrades-info-20 utSel-country-1-3"></div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="userTradeGroupsRow">
+							<div class="userTradeGroups userTradeGroups-upperSection">
+								<div class="userTrades-teamNameButtons">
+									<img src="images/arrow-left.png"  style="width: 60px;" onclick="prevousTeamTrades(1)" >
+									<img class="logo-userTrades-1" src="images/team-roster-icon-2.png" style="width: 100px; margin: 0 30px 0 30px">
+									<img src="images/arrow-right.png"  style="width: 60px;" onclick="nextTeamTrades(1)" >
+								</div>
+								
+								<div class="userTrades-allPlayers">
+									<div class="userTrades-allPlayers-headings">
+										<div style="width: 40%;">Player name</div>
+										<div style="width: 10%;">Overal</div>
+										<div style="width: 10%;">Age</div>
+										<div style="width: 10%;">Prim. Pos.</div>
+										<div style="width: 10%;">Sec. Pos.</div>
+										<div style="width: 20%;">Country</div>
+									</div>
+									<div class="line"></div>
+									<div class="userTrades-allPlayers-info userTrades-roster-1" onclick="addForTrade(2,1)">
+										<div class="userTrades-info-name ut-name-2-1">Player name</div> <div class="userTrades-info-10 ut-over-2-1">Overal</div> <div class="userTrades-info-10 ut-age-2-1">Age</div> <div class="userTrades-info-10 ut-priPos-2-1">PG</div> <div class="userTrades-info-10 ut-secPos-2-1">SG</div> <div class="userTrades-info-20 ut-country-2-1">Country</div>
+									</div>
+									<div class="userTrades-allPlayers-info userTrades-roster-2" onclick="addForTrade(2,2)"> 
+										<div class="userTrades-info-name ut-name-2-2">Player name</div> <div class="userTrades-info-10 ut-over-2-2">Overal</div> <div class="userTrades-info-10 ut-age-2-2">Age</div> <div class="userTrades-info-10 ut-priPos-2-2">PG</div> <div class="userTrades-info-10 ut-secPos-2-2">SG</div> <div class="userTrades-info-20 ut-country-2-2">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-3" onclick="addForTrade(2,3)"> 
+										<div class="userTrades-info-name ut-name-2-3">Player name</div> <div class="userTrades-info-10 ut-over-2-3">Overal</div> <div class="userTrades-info-10 ut-age-2-3">Age</div> <div class="userTrades-info-10 ut-priPos-2-3">PG</div> <div class="userTrades-info-10 ut-secPos-2-3">SG</div> <div class="userTrades-info-20 ut-country-2-3">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-4" onclick="addForTrade(2,4)"> 
+										<div class="userTrades-info-name ut-name-2-4">Player name</div> <div class="userTrades-info-10 ut-over-2-4">Overal</div> <div class="userTrades-info-10 ut-age-2-4">Age</div> <div class="userTrades-info-10 ut-priPos-2-4">PG</div> <div class="userTrades-info-10 ut-secPos-2-4">SG</div> <div class="userTrades-info-20 ut-country-2-4">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-5" onclick="addForTrade(2,5)"> 
+										<div class="userTrades-info-name ut-name-2-5">Player name</div> <div class="userTrades-info-10 ut-over-2-5">Overal</div> <div class="userTrades-info-10 ut-age-2-5">Age</div> <div class="userTrades-info-10 ut-priPos-2-5">PG</div> <div class="userTrades-info-10 ut-secPos-2-5">SG</div> <div class="userTrades-info-20 ut-country-2-5">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-6" onclick="addForTrade(2,6)"> 
+										<div class="userTrades-info-name ut-name-2-6">Player name</div> <div class="userTrades-info-10 ut-over-2-6">Overal</div> <div class="userTrades-info-10 ut-age-2-6">Age</div> <div class="userTrades-info-10 ut-priPos-2-6">PG</div> <div class="userTrades-info-10 ut-secPos-2-6">SG</div> <div class="userTrades-info-20 ut-country-2-6">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-7" onclick="addForTrade(2,7)"> 
+										<div class="userTrades-info-name ut-name-2-7">Player name</div> <div class="userTrades-info-10 ut-over-2-7">Overal</div> <div class="userTrades-info-10 ut-age-2-7">Age</div> <div class="userTrades-info-10 ut-priPos-2-7">PG</div> <div class="userTrades-info-10 ut-secPos-2-7">SG</div> <div class="userTrades-info-20 ut-country-2-7">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-8" onclick="addForTrade(2,8)"> 
+										<div class="userTrades-info-name ut-name-2-8">Player name</div> <div class="userTrades-info-10 ut-over-2-8">Overal</div> <div class="userTrades-info-10 ut-age-2-8">Age</div> <div class="userTrades-info-10 ut-priPos-2-8">PG</div> <div class="userTrades-info-10 ut-secPos-2-8">SG</div> <div class="userTrades-info-20 ut-country-2-8">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-9" onclick="addForTrade(2,9)"> 
+										<div class="userTrades-info-name ut-name-2-9">Player name</div> <div class="userTrades-info-10 ut-over-2-9">Overal</div> <div class="userTrades-info-10 ut-age-2-9">Age</div> <div class="userTrades-info-10 ut-priPos-2-9">PG</div> <div class="userTrades-info-10 ut-secPos-2-9">SG</div> <div class="userTrades-info-20 ut-country-2-9">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-10" onclick="addForTrade(2,10)"> 
+										<div class="userTrades-info-name ut-name-2-10">Player name</div> <div class="userTrades-info-10 ut-over-2-10">Overal</div> <div class="userTrades-info-10 ut-age-2-10">Age</div> <div class="userTrades-info-10 ut-priPos-2-10">PG</div> <div class="userTrades-info-10 ut-secPos-2-10">SG</div> <div class="userTrades-info-20 ut-country-2-10">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-11" onclick="addForTrade(2,11)"> 
+										<div class="userTrades-info-name ut-name-2-11">Player name</div> <div class="userTrades-info-10 ut-over-2-11">Overal</div> <div class="userTrades-info-10 ut-age-2-11">Age</div> <div class="userTrades-info-10 ut-priPos-2-11">PG</div> <div class="userTrades-info-10 ut-secPos-2-11">SG</div> <div class="userTrades-info-20 ut-country-2-11">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-12" onclick="addForTrade(2,12)"> 
+										<div class="userTrades-info-name ut-name-2-12">Player name</div> <div class="userTrades-info-10 ut-over-2-12">Overal</div> <div class="userTrades-info-10 ut-age-2-12">Age</div> <div class="userTrades-info-10 ut-priPos-2-12">PG</div> <div class="userTrades-info-10 ut-secPos-2-12">SG</div> <div class="userTrades-info-20 ut-country-2-12">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-13" onclick="addForTrade(2,13)"> 
+										<div class="userTrades-info-name ut-name-2-13">Player name</div> <div class="userTrades-info-10 ut-over-2-13">Overal</div> <div class="userTrades-info-10 ut-age-2-13">Age</div> <div class="userTrades-info-10 ut-priPos-2-13">PG</div> <div class="userTrades-info-10 ut-secPos-2-13">SG</div> <div class="userTrades-info-20 ut-country-2-13">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-14" onclick="addForTrade(2,14)"> 
+										<div class="userTrades-info-name ut-name-2-14">Player name</div> <div class="userTrades-info-10 ut-over-2-14">Overal</div> <div class="userTrades-info-10 ut-age-2-14">Age</div> <div class="userTrades-info-10 ut-priPos-2-14">PG</div> <div class="userTrades-info-10 ut-secPos-2-14">SG</div> <div class="userTrades-info-20 ut-country-2-14">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-15" onclick="addForTrade(2,15)"> 
+										<div class="userTrades-info-name ut-name-2-15">Player name</div> <div class="userTrades-info-10 ut-over-2-15">Overal</div> <div class="userTrades-info-10 ut-age-2-15">Age</div> <div class="userTrades-info-10 ut-priPos-2-15">PG</div> <div class="userTrades-info-10 ut-secPos-2-15">SG</div> <div class="userTrades-info-20 ut-country-2-15">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-16" onclick="addForTrade(2,16)"> 
+										<div class="userTrades-info-name ut-name-2-16">Player name</div> <div class="userTrades-info-10 ut-over-2-16">Overal</div> <div class="userTrades-info-10 ut-age-2-16">Age</div> <div class="userTrades-info-10 ut-priPos-2-16">PG</div> <div class="userTrades-info-10 ut-secPos-2-16">SG</div> <div class="userTrades-info-20 ut-country-2-16">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-17" onclick="addForTrade(2,17)"> 
+										<div class="userTrades-info-name ut-name-2-17">Player name</div> <div class="userTrades-info-10 ut-over-2-17">Overal</div> <div class="userTrades-info-10 ut-age-2-17">Age</div> <div class="userTrades-info-10 ut-priPos-2-17">PG</div> <div class="userTrades-info-10 ut-secPos-2-17">SG</div> <div class="userTrades-info-20 ut-country-2-17">Country</div>
+									</div>	
+									<div class="userTrades-allPlayers-info userTrades-roster-18" onclick="addForTrade(2,18)"> 
+										<div class="userTrades-info-name ut-name-2-18">Player name</div> <div class="userTrades-info-10 ut-over-2-18">Overal</div> <div class="userTrades-info-10 ut-age-2-18">Age</div> <div class="userTrades-info-10 ut-priPos-2-18">PG</div> <div class="userTrades-info-10 ut-secPos-2-18">SG</div> <div class="userTrades-info-20 ut-country-2-18">Country</div>
+									</div>
+								</div>
+							</div>
+							<div class="userTradeGroups" style="margin-top: 30px;">
+								<div class="userTrades-allPlayers-headings">
+										<div style="width: 40%;">Player name</div>
+										<div style="width: 10%;">Overal</div>
+										<div style="width: 10%;">Age</div>
+										<div style="width: 10%;">Prim. Pos.</div>
+										<div style="width: 10%;">Sec. Pos.</div>
+										<div style="width: 20%;">Country</div>
+								</div>
+								<div class="line"></div>
+								<div class="userTrades-selectedPlayers" onclick="clearPlayerTradeList(2,1)">
+									<div class="userTrades-info-name utSel-name-2-1">-----</div> <div class="userTrades-info-10 utSel-over-2-1"></div> <div class="userTrades-info-10 utSel-age-2-1"></div> <div class="userTrades-info-10 utSel-priPos-2-1"></div> <div class="userTrades-info-10 utSel-secPos-2-1"></div> <div class="userTrades-info-20 utSel-country-2-1"></div>
+								</div>
+								<div class="userTrades-selectedPlayers" onclick="clearPlayerTradeList(2,2)">
+									<div class="userTrades-info-name utSel-name-2-2">-----</div> <div class="userTrades-info-10 utSel-over-2-2"></div> <div class="userTrades-info-10 utSel-age-2-2"></div> <div class="userTrades-info-10 utSel-priPos-2-2"></div> <div class="userTrades-info-10 utSel-secPos-2-2"></div> <div class="userTrades-info-20 utSel-country-2-2"></div>
+								</div>
+								<div class="userTrades-selectedPlayers" onclick="clearPlayerTradeList(2,3)">
+									<div class="userTrades-info-name utSel-name-2-3">-----</div> <div class="userTrades-info-10 utSel-over-2-3"></div> <div class="userTrades-info-10 utSel-age-2-3"></div> <div class="userTrades-info-10 utSel-priPos-2-3"></div> <div class="userTrades-info-10 utSel-secPos-2-3"></div> <div class="userTrades-info-20 utSel-country-2-3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="tradeButtons-row">
+						<div class="tradeButton" onclick="makeUserTrade()">MAKE TRADE</div>
+						<div class="tradeButton" onclick="findTrade()">FIND TRADE</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="checkTrade-modal">
+				<div class="checkTrade-container">
+					<div class="checkTrade-content">
+						<h2 class="trade-result-text">No trade</h2>
+						<div class="progress-bar"> 
+							<div class="trade-percent" > <span class="span-percent">0%</span> </div>
+						</div>
+						<div class="checkTrade-button" onclick="closeCheckTradeModal()">CONTINUE</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="selectTeamUpgrade-modal">
+				<div class="selectTeamUpgrade-container">
+					<div class="selectTeamUpgradeTitle">SELECT TEAM UPGRADE</div>
+					<div class="selectTeamUpgrade-row"> 
+						<div class="tooltip">Offense<br>skills
+							<span class="tooltiptext">+1 to +5 increase in offensive skills for each team player:<br><br>Offensive awareness<br>Offensive rebounds<br>Passing<br>Dribble</span>
+						</div>
+						<div class="tooltip">Defence<br>skills
+							<span class="tooltiptext">+1 to +5 increase in defensive skills for each team player:<br><br>Defensive awareness<br>Defensive rebounds<br>Block<br>Steal</span>
+						</div>
+						<div class="tooltip">Shooting<br>skills
+							<span class="tooltiptext">+1 to +5 increase in shooting skills for each team player:<br><br>Inside shot<br>2 point shot<br>3 point shot<br>Free throw</span>
+						</div>
+						<div class="tooltip">Physical<br>skills
+							<span class="tooltiptext">+1 to +5 increase in physical skills for each team player:<br><br>Jumping<br>Strength<br>Speed<br>Quickness<br>Endurance</span>
+						</div>
+						<div class="tooltip">Rookie<br>boost
+							<span class="tooltiptext">+5 to +25 increase in random skills for each rookie drafted</span>
+						</div>
+						<div class="tooltip">Attack<br>boost
+							<span class="tooltiptext">+1 to +5 extra attacks in each game</span>
+						</div>
+						<div class="tooltip">Defence<br>boost
+							<span class="tooltiptext">+1 to +5 extra defensive stops in each game</span>
+						</div>
+						<div class="tooltip">Trade<br>boost
+							<span class="tooltiptext">+1 to +5 potential trade overal point increase in each trade</span>
+						</div>
+						<div class="tooltip">Country<br>boost
+							<span class="tooltiptext">+1 to +5 country basketball popularity and player quality increase</span>
+						</div>
+					</div>
+					
+					<div class="selectTeamUpgrade-arrow-up">
+						<div> <img class="arrow arrow-0"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(0)" onmouseenter="incrSize(0)" onmouseleave="decrSize(0)"> </div>
+						<div> <img class="arrow arrow-1"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(1)" onmouseenter="incrSize(1)" onmouseleave="decrSize(1)"> </div>
+						<div> <img class="arrow arrow-2"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(2)" onmouseenter="incrSize(2)" onmouseleave="decrSize(2)"> </div>
+						<div> <img class="arrow arrow-3"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(3)" onmouseenter="incrSize(3)" onmouseleave="decrSize(3)"> </div>
+						<div> <img class="arrow arrow-4"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(4)" onmouseenter="incrSize(4)" onmouseleave="decrSize(4)"> </div>
+						<div> <img class="arrow arrow-5"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(5)" onmouseenter="incrSize(5)" onmouseleave="decrSize(5)"> </div>
+						<div> <img class="arrow arrow-6"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(6)" onmouseenter="incrSize(6)" onmouseleave="decrSize(6)"> </div>
+						<div> <img class="arrow arrow-7"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(7)" onmouseenter="incrSize(7)" onmouseleave="decrSize(7)"> </div>
+						<div> <img class="arrow arrow-8"src="images/arrow-up-green.png" onclick="selectTeamUpgrade(8)" onmouseenter="incrSize(8)" onmouseleave="decrSize(8)"> </div>
+					</div>
+					<div class="selectTeamUpgrade-skillBar-container">
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-0-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-0-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-0-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-0-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-0-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-1-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-1-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-1-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-1-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-1-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-2-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-2-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-2-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-2-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-2-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-3-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-3-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-3-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-3-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-3-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-4-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-4-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-4-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-4-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-4-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-5-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-5-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-5-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-5-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-5-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-6-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-6-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-6-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-6-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-6-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-7-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-7-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-7-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-7-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-7-1">  </div>
+						</div>
+						<div class="selectTeamUpgrade-skillBar-row">
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-8-5">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-8-4">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-8-3">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-8-2">  </div>
+							<div class="selectTeamUpgrade-bar-fields upgradeBar-8-1">  </div>
+						</div>
+					</div>
+					<div class="selectTeamUpgrade-arrow-up">
+						<div> <img class="arrow arrow-9"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(9)" onmouseenter="incrSize(9)" onmouseleave="decrSize(9)"> </div>
+						<div> <img class="arrow arrow-10"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(10)" onmouseenter="incrSize(10)" onmouseleave="decrSize(10)"> </div>
+						<div> <img class="arrow arrow-11"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(11)" onmouseenter="incrSize(11)" onmouseleave="decrSize(11)"> </div>
+						<div> <img class="arrow arrow-12"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(12)" onmouseenter="incrSize(12)" onmouseleave="decrSize(12)"> </div>
+						<div> <img class="arrow arrow-13"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(13)" onmouseenter="incrSize(13)" onmouseleave="decrSize(13)"> </div>
+						<div> <img class="arrow arrow-14"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(14)" onmouseenter="incrSize(14)" onmouseleave="decrSize(14)"> </div>
+						<div> <img class="arrow arrow-15"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(15)" onmouseenter="incrSize(15)" onmouseleave="decrSize(15)"> </div>
+						<div> <img class="arrow arrow-16"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(16)" onmouseenter="incrSize(16)" onmouseleave="decrSize(16)"> </div>
+						<div> <img class="arrow arrow-17"src="images/arrow-down-white.png" onclick="selectTeamUpgrade(17)" onmouseenter="incrSize(17)" onmouseleave="decrSize(17)"> </div>
+					</div>
+					<div class="confirmTeamUpgrade-container">
+						<div class="confirmTeamUpgrade-button" onclick="closeUserTeamUpgradeSelect()"> CONFIRM </div>
+					</div>
+				</div>
+			</div>
+			<!-- A modal that displays current Country ratings in player quality, popularity etc. -->
+			<div  class="displayCountries-modal">
+				<div class="displayCountries-container">
+					<span class="close" onclick="closedisplayCountriesModal()">&times;</span>
+					<br>
+					<div class="displayCountriesTitle">BASKETBALL NATIONS</div>
+						<p id="countries-list-headers">COUNTRY NAME - BASKETBALL POPULARITY - PLAYER QUALITY</p>
+						<p id="countries-list-field"></p>
+					</div>
+				</div>
+			</div>
 		<script src="script.js"></script>
 	</body>
 </html>
