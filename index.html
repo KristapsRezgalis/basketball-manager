@@ -1300,10 +1300,11 @@
 					<span class="close" onclick="closePlayoffModal()">&times;</span>
 					<br>
 					<h3 class="playoffModalTitle">PLAYOFF GAMES</h3>
-					
-					<label style="position: absolute; left: 45%;" for="playoffYear">YEAR:</label>
-					<select id="playoffYearSelect" onchange="playoffInformationByYear(this)"style="position: absolute; left: 49%;" name="cars" id="cars">
-					</select>
+					<div style="display: flex; justify-content: center; margin-top: 10px;" >
+						<label style="padding-right: 10px;" for="playoffYear">YEAR:</label>
+						<select id="playoffYearSelect" onchange="playoffInformationByYear(this)">
+						</select>
+					</div>
 					<br></br>
 					
 					<input type="button" class="btnSimPlayIn" value="SIM PLAY-IN"/> 
@@ -1313,152 +1314,163 @@
 					<input type="button" class="btnSimFinal" value="SIM FINALS"/> 
 					<br></br>
 					<!-- PLAY IN WEST -->
-					<p style="position: absolute; top: 200px; left: 300px; font-family: Lucida Console;"> West Play-in games </p>
-					<table class="playInWest-9and10"> 
-						<tr title="9th-seed">
-							<td class="seedNumber west-9">9</td><td class="teamNamePlayoff westPlayInName-9"></td><td class="seriesResult west-9-result"></td>
-						</tr>
-						<tr title="10th-seed">
-							<td class="seedNumber west-10">10</td><td class="teamNamePlayoff westPlayInName-10"></td><td class="seriesResult west-10-result"></td>
-						</tr>
-					</table>
+					 <div style="display: flex; justify-content: space-evenly;">
+						<div style="width: 30%">
+							<p style="font-family: Lucida Console;"> West Play-in games </p>
+							<table class="playInWest-9and10"> 
+								<tr title="9th-seed">
+									<td class="seedNumber west-9">9</td><td class="teamNamePlayoff westPlayInName-9"></td><td class="seriesResult west-9-result"></td>
+								</tr>
+								<tr title="10th-seed">
+									<td class="seedNumber west-10">10</td><td class="teamNamePlayoff westPlayInName-10"></td><td class="seriesResult west-10-result"></td>
+								</tr>
+							</table>
+							<br></br>
+							<table class="playInWest-7and8"> 
+								<tr title="7th-seed">
+									<td class="seedNumber west-7">7</td><td class="teamNamePlayoff westPlayInName-7"></td><td class="seriesResult west-7-result"></td>
+								</tr>
+								<tr title="8th-seed">
+									<td class="seedNumber west-8">8</td><td class="teamNamePlayoff westPlayInName-8"></td><td class="seriesResult west-8-result"></td>
+								</tr>
+							</table>
+							
+							<br></br>
+							<!-- PLAY-IN FINAL WEST -->
+							<p style="font-family: Lucida Console;"> West Play-in final game </p>
+							<table class="playInWestFinal"> 
+								<tr title="playInFinalWest">
+									<td class="seedNumber westPlayInFinalSeed-1"></td><td class="teamNamePlayoff westPlayInFinalName-1"></td><td class="seriesResult  westPlayInFinalName-1-result"></td>
+								</tr>
+								<tr title="playInFinalWest">
+									<td class="seedNumber westPlayInFinalSeed-2"></td><td class="teamNamePlayoff westPlayInFinalName-2"></td><td class="seriesResult  westPlayInFinalName-2-result"></td>
+								</tr>
+							</table>
+							<br></br>
+							<!-- PLAYOFF WEST GAMES-->
+							<p style="font-family: Lucida Console;"> Western conference </p>
+							<table class="west-1and8"> 
+								<tr title="1th-seed"> <td class="seedNumber west-1">1</td><td class="teamNamePlayoff westName-1"></td><td class="seriesResult westWins-1"></td> </tr>
+								<tr title="8th-seed"> <td class="seedNumber west-8">8</td><td class="teamNamePlayoff westName-8"></td><td class="seriesResult westWins-8"></td> </tr>
+							</table>
+							<table class="west-4and5"> 
+								<tr title="4th-seed"> <td class="seedNumber west-4">4</td><td class="teamNamePlayoff westName-4"></td><td class="seriesResult westWins-4"></td> </tr>
+								<tr title="5th-seed"> <td class="seedNumber west-5">5</td><td class="teamNamePlayoff westName-5"></td><td class="seriesResult westWins-5"></td> </tr>
+							</table>
+							<table class="west-3and6"> 
+								<tr title="3th-seed"> <td class="seedNumber west-3">3</td><td class="teamNamePlayoff westName-3"></td><td class="seriesResult westWins-3"></td> </tr>
+								<tr title="6th-seed"> <td class="seedNumber west-6">6</td><td class="teamNamePlayoff westName-6"></td><td class="seriesResult westWins-6"></td> </tr>
+							</table>
+							<table class="west-2and7"> 
+								<tr title="2th-seed"> <td class="seedNumber west-2">2</td><td class="teamNamePlayoff westName-2"></td><td class="seriesResult westWins-2"></td> </tr>
+								<tr title="7th-seed"> <td class="seedNumber west-7">7</td><td class="teamNamePlayoff westName-7"></td><td class="seriesResult westWins-7"></td> </tr>
+							</table>
+							<br></br>
+							<!-- WEST SEMI FINAL GAMES-->
+							<p style="font-family: Lucida Console;"> Western Semi Finals </p>
+							<table class="west-semi-1"> 
+								<tr title="semi-1-team"> <td class="seedNumber west-sf-1"></td><td class="teamNamePlayoff westName-sf-1"></td><td class="seriesResult westWins-sf-1"></td> </tr>
+								<tr title="semi-2-team"> <td class="seedNumber west-sf-2"></td><td class="teamNamePlayoff westName-sf-2"></td><td class="seriesResult westWins-sf-2"></td> </tr>
+							</table>
+							<br></br>
+							<table class="west-semi-2"> 
+								<tr title="semi-3-team"> <td class="seedNumber west-sf-3"></td><td class="teamNamePlayoff westName-sf-3"></td><td class="seriesResult westWins-sf-3"></td> </tr>
+								<tr title="semi-4-team"> <td class="seedNumber west-sf-4"></td><td class="teamNamePlayoff westName-sf-4"></td><td class="seriesResult westWins-sf-4"></td> </tr>
+							</table>
+							<br></br>
+							<!-- WEST CONFERENCE FINAL GAMES-->
+							<p style="font-family: Lucida Console;"> Western Finals </p>
+							<table class="west-final"> 
+								<tr title="west-final-1-team"> <td class="seedNumber west-cf-1"></td><td class="teamNamePlayoff westName-cf-1"></td><td class="seriesResult westWins-cf-1"></td> </tr>
+								<tr title="west-final-2-team"> <td class="seedNumber west-cf-2"></td><td class="teamNamePlayoff westName-cf-2"></td><td class="seriesResult westWins-cf-2"></td> </tr>
+							</table>
+						</div>
+
+						<div style="width: 30%">
+							<!-- PLAY IN EAST -->
+							<div>
+								<p style="font-family: Lucida Console;"> East Play-in games </p>
+								<table class="playInEast-9and10"> 
+									<tr title="9th-seed">
+										<td class="seedNumber east-9">9</td><td class="teamNamePlayoff eastPlayInName-9"></td><td class="seriesResult  east-9-result"></td>
+									</tr>
+									<tr title="10th-seed">
+										<td class="seedNumber east-10">10</td><td class="teamNamePlayoff eastPlayInName-10"></td><td class="seriesResult  east-10-result"></td>
+									</tr>
+								</table>
+								<br></br>
+								<table class="playInEast-7and8"> 
+									<tr title="7th-seed">
+										<td class="seedNumber east-7">7</td><td class="teamNamePlayoff eastPlayInName-7"></td><td class="seriesResult  east-7-result"></td>
+									</tr>
+									<tr title="8th-seed">
+										<td class="seedNumber east-8">8</td><td class="teamNamePlayoff eastPlayInName-8"></td><td class="seriesResult  east-8-result"></td>
+									</tr>
+								</table>
+							</div>
+							<br></br>
+							<!-- PLAY-IN FINAL EAST -->
+							<p style="font-family: Lucida Console;"> East Play-in final game </p>
+							<table class="playInEastFinal"> 
+								<tr title="playInEastFinal">
+									<td class="seedNumber eastPlayInFinalSeed-1"></td><td class="teamNamePlayoff eastPlayInFinalName-1"></td><td class="seriesResult  eastPlayInFinalName-1-result"></td>
+								</tr>
+								<tr title="playInEastFinal">
+									<td class="seedNumber eastPlayInFinalSeed-2"></td><td class="teamNamePlayoff eastPlayInFinalName-2"></td><td class="seriesResult  eastPlayInFinalName-2-result"></td>
+								</tr>
+							</table>
+							<br></br>
+							<!-- PLAYOFF EAST GAMES-->
+							<p style="font-family: Lucida Console;"> Eastern conference </p>
+							<table class="east-1and8"> 
+								<tr title="1th-seed"> <td class="seedNumber east-1">1</td><td class="teamNamePlayoff eastName-1"></td><td class="seriesResult eastWins-1"></td> </tr>
+								<tr title="8th-seed"> <td class="seedNumber east-8">8</td><td class="teamNamePlayoff eastName-8"></td><td class="seriesResult eastWins-8"></td> </tr>
+							</table>
+							<table class="east-4and5"> 
+								<tr title="4th-seed"> <td class="seedNumber east-4">4</td><td class="teamNamePlayoff eastName-4"></td><td class="seriesResult eastWins-4"></td> </tr>
+								<tr title="5th-seed"> <td class="seedNumber east-5">5</td><td class="teamNamePlayoff eastName-5"></td><td class="seriesResult eastWins-5"></td> </tr>
+							</table>
+							<table class="east-3and6"> 
+								<tr title="3th-seed"> <td class="seedNumber east-3">3</td><td class="teamNamePlayoff eastName-3"></td><td class="seriesResult eastWins-3"></td> </tr>
+								<tr title="6th-seed"> <td class="seedNumber east-6">6</td><td class="teamNamePlayoff eastName-6"></td><td class="seriesResult eastWins-6"></td> </tr>
+							</table>
+							<table class="east-2and7"> 
+								<tr title="2th-seed"> <td class="seedNumber east-2">2</td><td class="teamNamePlayoff eastName-2"></td><td class="seriesResult eastWins-2"></td> </tr>
+								<tr title="7th-seed"> <td class="seedNumber east-7">7</td><td class="teamNamePlayoff eastName-7"></td><td class="seriesResult eastWins-7"></td> </tr>
+							</table>
+							<br></br>
+							<!-- EAST SEMI FINAL GAMES-->
+							<p style="font-family: Lucida Console;"> Eastern Semi Finals </p>
+							<table class="east-semi-1"> 
+								<tr title="semi-1-team"> <td class="seedNumber east-sf-1"></td><td class="teamNamePlayoff eastName-sf-1"></td><td class="seriesResult eastWins-sf-1"></td> </tr>
+								<tr title="semi-2-team"> <td class="seedNumber east-sf-2"></td><td class="teamNamePlayoff eastName-sf-2"></td><td class="seriesResult eastWins-sf-2"></td> </tr>
+							</table>
+							<br></br>
+							<table class="east-semi-2"> 
+								<tr title="semi-3-team"> <td class="seedNumber east-sf-3"></td><td class="teamNamePlayoff eastName-sf-3"></td><td class="seriesResult eastWins-sf-3"></td> </tr>
+								<tr title="semi-4-team"> <td class="seedNumber east-sf-4"></td><td class="teamNamePlayoff eastName-sf-4"></td><td class="seriesResult eastWins-sf-4"></td> </tr>
+							</table>
+							<br></br>
+							<!-- EAST CONFERENCE FINAL GAMES-->
+							<p style="font-family: Lucida Console;"> Eastern Finals </p>
+							<table class="east-final"> 
+								<tr title="east-final-1-team"> <td class="seedNumber east-cf-1"></td><td class="teamNamePlayoff eastName-cf-1"></td><td class="seriesResult eastWins-cf-1"></td> </tr>
+								<tr title="east-final-2-team"> <td class="seedNumber east-cf-2"></td><td class="teamNamePlayoff eastName-cf-2"></td><td class="seriesResult eastWins-cf-2"></td> </tr>
+							</table>
+						</div>
+					</div>
 					<br></br>
-					<table class="playInWest-7and8"> 
-						<tr title="7th-seed">
-							<td class="seedNumber west-7">7</td><td class="teamNamePlayoff westPlayInName-7"></td><td class="seriesResult west-7-result"></td>
-						</tr>
-						<tr title="8th-seed">
-							<td class="seedNumber west-8">8</td><td class="teamNamePlayoff westPlayInName-8"></td><td class="seriesResult west-8-result"></td>
-						</tr>
-					</table>
-					<!-- PLAY IN EAST -->
-					<p style="position: absolute; top: 200px; right: 300px; font-family: Lucida Console;"> East Play-in games </p>
-					<table class="playInEast-9and10"> 
-						<tr title="9th-seed">
-							<td class="seedNumber east-9">9</td><td class="teamNamePlayoff eastPlayInName-9"></td><td class="seriesResult  east-9-result"></td>
-						</tr>
-						<tr title="10th-seed">
-							<td class="seedNumber east-10">10</td><td class="teamNamePlayoff eastPlayInName-10"></td><td class="seriesResult  east-10-result"></td>
-						</tr>
-					</table>
-					<br></br>
-					<table class="playInEast-7and8"> 
-						<tr title="7th-seed">
-							<td class="seedNumber east-7">7</td><td class="teamNamePlayoff eastPlayInName-7"></td><td class="seriesResult  east-7-result"></td>
-						</tr>
-						<tr title="8th-seed">
-							<td class="seedNumber east-8">8</td><td class="teamNamePlayoff eastPlayInName-8"></td><td class="seriesResult  east-8-result"></td>
-						</tr>
-					</table>
-					<br></br>
-					<!-- PLAY-IN FINAL WEST -->
-					<p style="position: absolute; top: 325px; left: 270px; font-family: Lucida Console;"> West Play-in final game </p>
-					<table class="playInWestFinal"> 
-						<tr title="playInFinalWest">
-							<td class="seedNumber westPlayInFinalSeed-1"></td><td class="teamNamePlayoff westPlayInFinalName-1"></td><td class="seriesResult  westPlayInFinalName-1-result"></td>
-						</tr>
-						<tr title="playInFinalWest">
-							<td class="seedNumber westPlayInFinalSeed-2"></td><td class="teamNamePlayoff westPlayInFinalName-2"></td><td class="seriesResult  westPlayInFinalName-2-result"></td>
-						</tr>
-					</table>
-					
-					<!-- PLAY-IN FINAL EAST -->
-					<p style="position: absolute; top: 325px; right: 270px; font-family: Lucida Console;"> East Play-in final game </p>
-					<table class="playInEastFinal"> 
-						<tr title="playInEastFinal">
-							<td class="seedNumber eastPlayInFinalSeed-1"></td><td class="teamNamePlayoff eastPlayInFinalName-1"></td><td class="seriesResult  eastPlayInFinalName-1-result"></td>
-						</tr>
-						<tr title="playInEastFinal">
-							<td class="seedNumber eastPlayInFinalSeed-2"></td><td class="teamNamePlayoff eastPlayInFinalName-2"></td><td class="seriesResult  eastPlayInFinalName-2-result"></td>
-						</tr>
-					</table>
-					<br></br>
-					
-					<br></br>
-					<!-- PLAYOFF WEST GAMES-->
-					<p style="position: absolute; top: 400px; left: 300px; font-family: Lucida Console;"> Western conference </p>
-					<table class="west-1and8"> 
-						<tr title="1th-seed"> <td class="seedNumber west-1">1</td><td class="teamNamePlayoff westName-1"></td><td class="seriesResult westWins-1"></td> </tr>
-						<tr title="8th-seed"> <td class="seedNumber west-8">8</td><td class="teamNamePlayoff westName-8"></td><td class="seriesResult westWins-8"></td> </tr>
-					</table>
-					<br></br>
-					<table class="west-4and5"> 
-						<tr title="4th-seed"> <td class="seedNumber west-4">4</td><td class="teamNamePlayoff westName-4"></td><td class="seriesResult westWins-4"></td> </tr>
-						<tr title="5th-seed"> <td class="seedNumber west-5">5</td><td class="teamNamePlayoff westName-5"></td><td class="seriesResult westWins-5"></td> </tr>
-					</table>
-					<table class="west-3and6"> 
-						<tr title="3th-seed"> <td class="seedNumber west-3">3</td><td class="teamNamePlayoff westName-3"></td><td class="seriesResult westWins-3"></td> </tr>
-						<tr title="6th-seed"> <td class="seedNumber west-6">6</td><td class="teamNamePlayoff westName-6"></td><td class="seriesResult westWins-6"></td> </tr>
-					</table>
-					<table class="west-2and7"> 
-						<tr title="2th-seed"> <td class="seedNumber west-2">2</td><td class="teamNamePlayoff westName-2"></td><td class="seriesResult westWins-2"></td> </tr>
-						<tr title="7th-seed"> <td class="seedNumber west-7">7</td><td class="teamNamePlayoff westName-7"></td><td class="seriesResult westWins-7"></td> </tr>
-					</table>
-					
-					<!-- PLAYOFF EAST GAMES-->
-					<p style="position: absolute; top: 400px; right: 300px; font-family: Lucida Console;"> Eastern conference </p>
-					<table class="east-1and8"> 
-						<tr title="1th-seed"> <td class="seedNumber east-1">1</td><td class="teamNamePlayoff eastName-1"></td><td class="seriesResult eastWins-1"></td> </tr>
-						<tr title="8th-seed"> <td class="seedNumber east-8">8</td><td class="teamNamePlayoff eastName-8"></td><td class="seriesResult eastWins-8"></td> </tr>
-					</table>
-					<br></br>
-					<table class="east-4and5"> 
-						<tr title="4th-seed"> <td class="seedNumber east-4">4</td><td class="teamNamePlayoff eastName-4"></td><td class="seriesResult eastWins-4"></td> </tr>
-						<tr title="5th-seed"> <td class="seedNumber east-5">5</td><td class="teamNamePlayoff eastName-5"></td><td class="seriesResult eastWins-5"></td> </tr>
-					</table>
-					<table class="east-3and6"> 
-						<tr title="3th-seed"> <td class="seedNumber east-3">3</td><td class="teamNamePlayoff eastName-3"></td><td class="seriesResult eastWins-3"></td> </tr>
-						<tr title="6th-seed"> <td class="seedNumber east-6">6</td><td class="teamNamePlayoff eastName-6"></td><td class="seriesResult eastWins-6"></td> </tr>
-					</table>
-					<table class="east-2and7"> 
-						<tr title="2th-seed"> <td class="seedNumber east-2">2</td><td class="teamNamePlayoff eastName-2"></td><td class="seriesResult eastWins-2"></td> </tr>
-						<tr title="7th-seed"> <td class="seedNumber east-7">7</td><td class="teamNamePlayoff eastName-7"></td><td class="seriesResult eastWins-7"></td> </tr>
-					</table>
-					
-					<!-- WEST SEMI FINAL GAMES-->
-					<p style="position: absolute; top: 595px; left: 300px; font-family: Lucida Console;"> Western Semi Finals </p>
-					<table class="west-semi-1"> 
-						<tr title="semi-1-team"> <td class="seedNumber west-sf-1"></td><td class="teamNamePlayoff westName-sf-1"></td><td class="seriesResult westWins-sf-1"></td> </tr>
-						<tr title="semi-2-team"> <td class="seedNumber west-sf-2"></td><td class="teamNamePlayoff westName-sf-2"></td><td class="seriesResult westWins-sf-2"></td> </tr>
-					</table>
-					<br></br>
-					<table class="west-semi-2"> 
-						<tr title="semi-3-team"> <td class="seedNumber west-sf-3"></td><td class="teamNamePlayoff westName-sf-3"></td><td class="seriesResult westWins-sf-3"></td> </tr>
-						<tr title="semi-4-team"> <td class="seedNumber west-sf-4"></td><td class="teamNamePlayoff westName-sf-4"></td><td class="seriesResult westWins-sf-4"></td> </tr>
-					</table>
-					<!-- EAST SEMI FINAL GAMES-->
-					<p style="position: absolute; top: 595px; right: 300px; font-family: Lucida Console;"> Eastern Semi Finals </p>
-					<table class="east-semi-1"> 
-						<tr title="semi-1-team"> <td class="seedNumber east-sf-1"></td><td class="teamNamePlayoff eastName-sf-1"></td><td class="seriesResult eastWins-sf-1"></td> </tr>
-						<tr title="semi-2-team"> <td class="seedNumber east-sf-2"></td><td class="teamNamePlayoff eastName-sf-2"></td><td class="seriesResult eastWins-sf-2"></td> </tr>
-					</table>
-					<br></br>
-					<table class="east-semi-2"> 
-						<tr title="semi-3-team"> <td class="seedNumber east-sf-3"></td><td class="teamNamePlayoff eastName-sf-3"></td><td class="seriesResult eastWins-sf-3"></td> </tr>
-						<tr title="semi-4-team"> <td class="seedNumber east-sf-4"></td><td class="teamNamePlayoff eastName-sf-4"></td><td class="seriesResult eastWins-sf-4"></td> </tr>
-					</table>
-					
-					<!-- WEST CONFERENCE FINAL GAMES-->
-					<p style="position: absolute; top: 710px; left: 300px; font-family: Lucida Console;"> Western Finals </p>
-					<table class="west-final"> 
-						<tr title="west-final-1-team"> <td class="seedNumber west-cf-1"></td><td class="teamNamePlayoff westName-cf-1"></td><td class="seriesResult westWins-cf-1"></td> </tr>
-						<tr title="west-final-2-team"> <td class="seedNumber west-cf-2"></td><td class="teamNamePlayoff westName-cf-2"></td><td class="seriesResult westWins-cf-2"></td> </tr>
-					</table>
-					<!-- EAST CONFERENCE FINAL GAMES-->
-					<p style="position: absolute; top: 710px; right: 300px; font-family: Lucida Console;"> Eastern Finals </p>
-					<table class="east-final"> 
-						<tr title="east-final-1-team"> <td class="seedNumber east-cf-1"></td><td class="teamNamePlayoff eastName-cf-1"></td><td class="seriesResult eastWins-cf-1"></td> </tr>
-						<tr title="east-final-2-team"> <td class="seedNumber east-cf-2"></td><td class="teamNamePlayoff eastName-cf-2"></td><td class="seriesResult eastWins-cf-2"></td> </tr>
-					</table>
-					
 					<!-- NBA FINAL GAMES-->
-					<p style="position: absolute; top: 790px; left: 47%; font-family: Lucida Console;"> NBA FINALS </p>
-					<table class="nba-final"> 
-						<tr title="nba-final-1-team" class="nba-final-row"> <td class="seedNumber nbaFinal-1"></td><td class="teamNamePlayoff nbaFinalName-1"></td><td class="seriesResult nbaFinalWins-1"></td> </tr>
-						<tr title="nba-final-2-team" class="nba-final-row"> <td class="seedNumber nbaFinal-2"></td><td class="teamNamePlayoff nbaFinalName-2"></td><td class="seriesResult nbaFinalWins-2"></td> </tr>
-					</table>
-					<p style="position: absolute; top: 930px; text-align: center; left: 50%; transform: translateX(-50%); font-family: Lucida Console;" class="nbaChampionText"> NBA CHAMPIONS TEXT </p>
-					<br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br>
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<div style="width: 40%; text-align: center;">
+							<p style="font-family: Lucida Console; padding-bottom: 15px;"> NBA FINALS </p>
+							<table  class="nba-final"> 
+								<tr title="nba-final-1-team" class="nba-final-row"> <td class="seedNumber nbaFinal-1"></td><td class="teamNamePlayoff nbaFinalName-1"></td><td class="seriesResult nbaFinalWins-1"></td> </tr>
+								<tr title="nba-final-2-team" class="nba-final-row"> <td class="seedNumber nbaFinal-2"></td><td class="teamNamePlayoff nbaFinalName-2"></td><td class="seriesResult nbaFinalWins-2"></td> </tr>
+							</table>
+							<p style="font-family: Lucida Console; padding-top: 20px;" class="nbaChampionText"> NBA CHAMPIONS TEXT </p>
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -1469,10 +1481,11 @@
 					<br>
 					<h3 class="retiredModalTitle">RETIRED PLAYERS</h3>
 					
-					<label style="position: absolute; left: 45%;" for="playoffYear">YEAR:</label>
-					<!-- <select id="playoffYearSelect" onchange="playoffInformationByYear(this)"style="position: absolute; left: 49%;" name="cars" id="cars">  -->
-					<select id="retiredYearSelect" onchange="retiredInformationByYear(this)"style="position: absolute; left: 49%;" name="retired players" >
-					</select>
+					<div style="display: flex; justify-content: center; margin-top: 10px;" >
+						<label style="padding-right: 10px;" for="playoffYear">YEAR:</label>
+						<select id="retiredYearSelect" onchange="retiredInformationByYear(this)" name="retired players" >
+						</select>
+					</div>
 					<br></br>
 					
 					<table class="retiredTable" id="retiredPlayerTable">
@@ -1493,10 +1506,12 @@
 					<br>
 					<h3 class="mockDraftModalTitle">NBA DRAFT</h3>
 					
-					<label style="position: absolute; left: 47%; transform: translateX(-50%);" for="playoffYear">YEAR:</label>
-					<select id="mockDraftYearSelect" onchange="mockDraftByYear(this)" style="position: absolute; left: 51%; transform: translateX(-50%);" name="mock draft players" >
-					</select>
-					
+					<div style="display: flex; justify-content: center; margin-top: 10px;" >
+						<label style="padding-right: 10px;" for="playoffYear">YEAR:</label>
+						<select id="mockDraftYearSelect" onchange="mockDraftByYear(this)" name="mock draft players" >
+						</select>
+					</div>
+
 					<input type="button" class="btn-simDraft" style="position: relative; top: 10%;  left: 3%; height: 50px; background-color: white; font-weight: 900; " value="START DRAFT" onclick="draftRookies()">
 					<table class="mockDraftTable" id="mockDraftPlayerTable">
 						<tr>
@@ -2283,6 +2298,7 @@
 				</div>
 			</div>
 			
+			<!-- TEAM UPRADE SELECT MODAL - OPENS WHEN A USER WINS A PLAYOFFS/CHAMPIONSHIP -->
 			<div class="selectTeamUpgrade-modal">
 				<div class="selectTeamUpgrade-container">
 					<div class="selectTeamUpgradeTitle">SELECT TEAM UPGRADE</div>

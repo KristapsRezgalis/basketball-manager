@@ -299,6 +299,7 @@ class Player {
   end;
   inj;
   pot;
+  potLetter;
   overal;
   statRowNumber = -1;
   statsTotal = [0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0]; // games,pts,oreb,dreb,ast,stl,blk,to,fouls,insM,insA,2ptM,2ptA,3ptM,3ptA,ftM,ftA, RebTot,fgMade,fgAt, 2ptsFgM,2ptsFgAt,double,triple,quadriple, gamesStarted
@@ -401,8 +402,17 @@ class Player {
 			end +
 			inj) /
 		  18),
+			this.potLetter = this.getPotLetter();
 		 this.playerDevelopmentBySeason.push([currentYear, this.overal,this.ins,this.pt2,this.pt3,this.ft,this.jum,this.str,this.spe,this.qui,this.dri,this.pas,this.ore,this.dre,this.oaw,this.daw,this.blk,this.stl,this.end,this.inj,this.pot]);
   }
+
+	getPotLetter = function() {
+		if (this.pot == 0) { return "A"; }
+		else if (this.pot == 1) { return "B"; }
+		else if (this.pot == 2) { return "C"; }
+		else if (this.pot == 3) { return "D"; }
+		else if (this.pot == 4) { return "E"; }
+  	}
   
   calcPlayerOveral () {
 	this.overal =
@@ -5181,7 +5191,7 @@ let updatedMockDraftinformation = function (currentYear){
 			arrayMockDraftPlayers[22].innerHTML = rookieClass[mockDraftYear][i].stl;
 			arrayMockDraftPlayers[23].innerHTML = rookieClass[mockDraftYear][i].end;
 			arrayMockDraftPlayers[24].innerHTML = rookieClass[mockDraftYear][i].inj;
-			arrayMockDraftPlayers[25].innerHTML = rookieClass[mockDraftYear][i].pot;
+			arrayMockDraftPlayers[25].innerHTML = "?"; //rookieClass[mockDraftYear][i].potLetter;
 			arrayMockDraftPlayers[26].innerHTML = draftPicksAndTeams[mockDraftYear][i-1][0];
 			arrayMockDraftPlayers[27].innerHTML = draftPicksAndTeams[mockDraftYear][i-1][1];
 	}
@@ -5752,7 +5762,7 @@ let displayUserTradePlayers = function(leftRight){
 		document.querySelector(`.ut-name-${leftRight}-${i}`).innerHTML = teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].name;
 		document.querySelector(`.ut-over-${leftRight}-${i}`).innerHTML = Math.round( teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].overal );
 		document.querySelector(`.ut-age-${leftRight}-${i}`).innerHTML = teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].age;
-		document.querySelector(`.ut-potential-${leftRight}-${i}`).innerHTML = teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].pot;
+		document.querySelector(`.ut-potential-${leftRight}-${i}`).innerHTML = teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].potLetter;
 		document.querySelector(`.ut-priPos-${leftRight}-${i}`).innerHTML = teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].position;
 		document.querySelector(`.ut-secPos-${leftRight}-${i}`).innerHTML = teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].secPosition;
 		if (teamsArray[currentTradeTeam[leftRight-1]-1].roster[i-1].country.length <= 10) {
@@ -5779,7 +5789,7 @@ let addForTrade = function(leftRight, xPlayer){
 				document.querySelector(`.utSel-name-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].name;
 				document.querySelector(`.utSel-over-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = Math.round( teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].overal );
 				document.querySelector(`.utSel-age-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].age;
-				document.querySelector(`.utSel-poten-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].pot;
+				document.querySelector(`.utSel-poten-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].potLetter;
 				document.querySelector(`.utSel-priPos-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].position;
 				document.querySelector(`.utSel-secPos-${leftRight}-${selectedPlayersForTrade[leftRight-1]}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].secPosition;
 				if (teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[xPlayer-1].country.length <= 10) {
@@ -5835,7 +5845,7 @@ console.log(`in clearPlayerTradeList function => leftRight = ${leftRight} || cle
 				document.querySelector(`.utSel-name-${leftRight}-${j}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].name;
 				document.querySelector(`.utSel-over-${leftRight}-${j}`).innerHTML = Math.round( teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].overal );
 				document.querySelector(`.utSel-age-${leftRight}-${j}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].age;
-				document.querySelector(`.utSel-poten-${leftRight}-${j}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].pot;
+				document.querySelector(`.utSel-poten-${leftRight}-${j}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].potLetter;
 				document.querySelector(`.utSel-priPos-${leftRight}-${j}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].position;
 				document.querySelector(`.utSel-secPos-${leftRight}-${j}`).innerHTML = teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].secPosition;
 				if (teamsArray[ currentTradeTeam[leftRight-1]-1 ].roster[selectedPlayerNumbers[leftRight-1][j-1] - 1].country.length <= 10) {

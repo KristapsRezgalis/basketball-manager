@@ -33,7 +33,7 @@
 }
 
 /* ── Reset & Base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Barlow', sans-serif;
@@ -249,7 +249,6 @@ body {
   font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--bg-base);
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -1303,13 +1302,13 @@ td {
 
 .arrow {
   text-align: center;
-  width: 60px;
-  padding: 8px;
+  width: 70px;
+  padding: 10px;
   cursor: pointer;
   transition: transform 0.15s;
   filter: invert(0.8);
 }
-.arrow:hover { transform: scale(1.15); filter: invert(0.5) sepia(1) saturate(3); }
+/*.arrow:hover { transform: scale(1.15); filter: invert(0.5) sepia(1) saturate(3); } */
 
 .selectTeamUpgrade-skillBar-row {
   background: var(--bg-card);
@@ -1317,7 +1316,7 @@ td {
   padding: 6px;
   border-radius: var(--radius);
   text-align: center;
-  width: 4%;
+  width: 8%;
   margin: 0 1%;
   display: flex;
   flex-direction: column;
@@ -1414,7 +1413,7 @@ td {
 /* ============================================
    PLAYOFF BRACKET POSITIONING (unchanged logic)
    ============================================ */
-
+/*
 .playInWest-9and10 { position: absolute; top: 240px; left: 200px; width: 25%; }
 .playInWest-7and8  { position: absolute; top: 290px; left: 200px; width: 25%; }
 .playInEast-9and10 { position: absolute; top: 240px; right: 200px; width: 25%; }
@@ -1436,7 +1435,7 @@ td {
 .west-final  { position: absolute; top: 755px; left: 200px; width: 25%; }
 .east-final  { position: absolute; top: 755px; right: 200px; width: 25%; }
 .nba-final   { position: absolute; top: 840px; left: 37%; width: 25%; }
-
+*/
 /* ============================================
    STANDINGS MODAL
    ============================================ */
