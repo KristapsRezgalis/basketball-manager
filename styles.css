@@ -876,14 +876,14 @@ td {
   color: var(--green);
 }
 
-.draftRookie-rows, .draftRookie-rows-header {
+.draftRookie-rows, .draftRookie-rows-header, .displayCountries-rows-header, .displayCountries-rows {
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin-top: 12px;
 }
 
-.draftRookie-columns, .draftRookie-columns-header {
+.draftRookie-columns, .draftRookie-columns-header, .displayCountries-columns-header, .displayCountries-columns {
   display: flex;
   width: 100%;
   text-align: center;
@@ -892,12 +892,12 @@ td {
   overflow: hidden;
 }
 
-.draftRookie-columns-header {
+.draftRookie-columns-header, .displayCountries-columns-header {
   background: var(--bg-base);
   border-color: var(--border-accent);
 }
 
-.draftRookie-col-content {
+.draftRookie-col-content, .displayCountries-col-content {
   width: 15%;
   padding: 8px 4px;
   font-family: 'Barlow Condensed', sans-serif;
@@ -905,12 +905,12 @@ td {
   letter-spacing: 0.04em;
 }
 
-.draftRookie-columns-header .draftRookie-col-content {
+.draftRookie-columns-header .draftRookie-col-content, .displayCountries-col-content {
   color: var(--accent);
   font-size: 12px;
 }
 
-.draftRookie-columns {
+.draftRookie-columns, .displayCountries-columns {
   background: var(--bg-card);
   cursor: pointer;
   transition: background 0.15s;

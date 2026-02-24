@@ -3799,6 +3799,38 @@ const showCountryLevels = function(){
 		countriesListField.innerHTML += `${countries[i].countryName} - ${countries[i].popularity} - ${countries[i].playerQuality}</br>`;
 			console.log(countriesListField);
 	}
+
+	let countriesDivRow = document.querySelector(".displayCountries-rows");
+	countriesDivRow.innerHTML = ""; // Clear old rows
+	
+	let newColumnDiv = [];
+	let countryData = [];
+	
+	for (let i = 1; i < countries.length; i++){
+
+		countryData.push([]);
+		
+		newColumnDiv[i] = document.createElement("div");
+		newColumnDiv[i].classList.add('draftRookie-columns');
+		countriesDivRow.appendChild( newColumnDiv[i] );
+		
+		
+		for (let j = 0; j < 6; j++) {
+			countryData[i][j] = document.createElement("div");
+			countryData[i][j].classList.add('draftRookie-col-content');
+		}
+		countryData[i][0].innerText = countries[i].countryName;
+		countryData[i][1].innerText = countries[i].population;
+		countryData[i][2].innerText = countries[i].popularity;
+		countryData[i][3].innerText = countries[i].popularityChange;
+		countryData[i][4].innerText = countries[i].playerQuality;
+		countryData[i][5].innerText = countries[i].qualityChange;
+		
+		for (let x = 0; x < 6; x++){
+			newColumnDiv[i].appendChild( countryData[i][x] );
+		}
+	}
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
