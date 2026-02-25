@@ -52,7 +52,9 @@ class Country {
 	countryName;
 	population;
 	popularity;
-	playerQuality;;
+	playerQuality;
+	popularityChange = 0;
+	qualityChange = 0;
 	firstNames = [];
 	lastNames = [];
 	
@@ -3784,9 +3786,21 @@ const showTeamUpgrades = function() {
 
 let countriesListField = document.getElementById('countries-list-field');
 
+let selectUserYouthCamp = function(selectedCountryIndex){
+	selectCountryUpgrade();
+	console.log(`User has selected: ${countries[selectedCountryIndex].countryName}`);
+	userTeam.youthProgram[0] = countries[selectedCountryIndex].countryName;
+	//userTeam.youthProgram[1] =
+	if (userTeam.youthProgram[0] == 0 || userTeam.youthProgram[0] == null) {
+		yourYouthCampName.innerHTML = `Random`;
+	} else {
+		yourYouthCampName.innerHTML = `${userTeam.youthProgram[0]}`;
+	}
+}
+
 // opens a modal to see the popularity and player quality of each country in the game
 const showCountryLevels = function(){
-
+	// Sorts countries array with a country with best player quality at the top
 	countries.sort(function (a, b) {
 		if (b.playerQuality !== a.playerQuality){
 			return b.playerQuality - a.playerQuality;
@@ -3794,37 +3808,56 @@ const showCountryLevels = function(){
 	});
 
 	countryRatingsModal.style.display = "block";
+	let yourYouthCampName = document.getElementById('yourYouthCampName');
+	let yourYouthCampPoints = document.getElementById('yourYouthCampPoints');
+	//userTeam.yourYouthCamp[0] == 0 ? yourYouthCamp.innerHTML = 'RANDOM' : yourYouthCamp.innerHTML = `${userTeam.yourYouthCamp[0]} ${userTeam.yourYouthCamp[1]} `;
+	if (userTeam.youthProgram[0] == 0 || userTeam.youthProgram[0] == null) {
+		yourYouthCampName.innerHTML = `Random`;
+	} else {
+		yourYouthCampName.innerHTML = `${userTeam.youthProgram[0]}`;
+	}
+	if(userTeam.youthProgram[1] > 0) {
+		yourYouthCampPoints.innerHTML = `+${userTeam.youthProgram[1]}`
+	} else {
+		yourYouthCampPoints.innerHTML = `0`;
+	}
+
+	/*
 	countriesListField.innerHTML = "";
 	for (let i = 0; i < countries.length; i++) {
 		countriesListField.innerHTML += `${countries[i].countryName} - ${countries[i].popularity} - ${countries[i].playerQuality}</br>`;
 			console.log(countriesListField);
 	}
-
+	*/
 	let countriesDivRow = document.querySelector(".displayCountries-rows");
 	countriesDivRow.innerHTML = ""; // Clear old rows
 	
 	let newColumnDiv = [];
 	let countryData = [];
-	
-	for (let i = 1; i < countries.length; i++){
+	// Loops through countries array
+	for (let i = 0; i < countries.length; i++){
 
 		countryData.push([]);
 		
+		// creates a DIV that will store information about iterated country
 		newColumnDiv[i] = document.createElement("div");
 		newColumnDiv[i].classList.add('draftRookie-columns');
 		countriesDivRow.appendChild( newColumnDiv[i] );
 		
-		
+		// Loops through number of data that will be displayed - creates a new DIV and stores data for each of it
 		for (let j = 0; j < 6; j++) {
 			countryData[i][j] = document.createElement("div");
 			countryData[i][j].classList.add('draftRookie-col-content');
+			countryData[i][j].data = i;
+			countryData[i][j].onclick = function() { selectUserYouthCamp(i) };
 		}
 		countryData[i][0].innerText = countries[i].countryName;
 		countryData[i][1].innerText = countries[i].population;
 		countryData[i][2].innerText = countries[i].popularity;
-		countryData[i][3].innerText = countries[i].popularityChange;
+		countries[i].popularityChange > 0 ? countryData[i][3].innerText = `+${countries[i].popularityChange}` : countryData[i][3].innerText = countries[i].popularityChange;
 		countryData[i][4].innerText = countries[i].playerQuality;
-		countryData[i][5].innerText = countries[i].qualityChange;
+		//countryData[i][5].innerText = countries[i].qualityChange;
+		countries[i].qualityChange > 0 ? countryData[i][5].innerText = `+${countries[i].qualityChange}` : countryData[i][5].innerText = countries[i].qualityChange;
 		
 		for (let x = 0; x < 6; x++){
 			newColumnDiv[i].appendChild( countryData[i][x] );
@@ -6204,13 +6237,19 @@ let closeUserTeamUpgradeSelect = function (){
 
 //openTeamUpgradeIncreaseModal();
 
+// Function to generate a random country that is selected as Your Camp for each team
 let selectCountryUpgrade = function (){
 	for (let i = 0; i < teamsArray.length; i++){
-		if(teamsArray[i].teamUpgrades[8] > 0){
-			let randCountry = Math.floor(Math.random() * countries.length);
-			teamsArray[i].youthProgram[0] = countries[randCountry].countryName;
+		if (i != userTeam.numberInTeamList) {
+			if(teamsArray[i].teamUpgrades[8] > 0){
+				let randCountry = Math.floor(Math.random() * countries.length);
+				teamsArray[i].youthProgram[0] = countries[randCountry].countryName;
+				teamsArray[i].youthProgram[1] = teamsArray[i].teamUpgrades[8];
+				console.log(`teamsArray[i].youthProgram[0]  = ${teamsArray[i].youthProgram[0] } -- teamsArray[i].youthProgram[1] = ${teamsArray[i].youthProgram[1]}`);
+			}
+		} else {
 			teamsArray[i].youthProgram[1] = teamsArray[i].teamUpgrades[8];
-			console.log(`teamsArray[i].youthProgram[0]  = ${teamsArray[i].youthProgram[0] } -- teamsArray[i].youthProgram[1] = ${teamsArray[i].youthProgram[1]}`);
+			console.log(`USER TEAM -> teamsArray[i].youthProgram[0]  = ${teamsArray[i].youthProgram[0] } -- teamsArray[i].youthProgram[1] = ${teamsArray[i].youthProgram[1]}`);
 		}
 	}
 }
@@ -6223,11 +6262,13 @@ let updateCountryValues = function(){
 		
 		for (let j = 0; j < teamsArray.length; j++){
 			if (teamsArray[j].youthProgram[0] === countries[i].countryName){
-				index += teamsArray[j].youthProgram[1]; // increases country's basketball popularity by the the teams Upgrade level
+				index += teamsArray[j].youthProgram[1]; // adds to the rand index each teams' yout program points if the have any
 			}
 		}
 		
-		countries[i].popularity += index;
+		countries[i].popularity += index; // increases country's basketball popularity by the the teams Upgrade level
+		countries[i].popularityChange = index;
+		
 		
 		if (countries[i].popularity < 1)  { countries[i].popularity = 1; }
 		else if (countries[i].popularity > 2000) { countries[i].popularity = 2000; }
@@ -6237,11 +6278,12 @@ let updateCountryValues = function(){
 		
 		for (let j = 0; j < teamsArray.length; j++){
 			if (teamsArray[j].youthProgram[0] === countries[i].countryName){
-				index += teamsArray[j].youthProgram[1]; // increases country's basketball plauyer quality by the the teams Upgrade level
+				index += teamsArray[j].youthProgram[1]; // adds to the rand index each teams' yout program points if the have any
 			}
 		}
 		
-		countries[i].playerQuality += index;
+		countries[i].playerQuality += index; // increases country's basketball player quality by the the teams Upgrade level
+		countries[i].qualityChange = index;
 		
 		if (countries[i].playerQuality < 1) { countries[i].playerQuality = 1; }
 		else if (countries[i].playerQuality > 100) { countries[i].playerQuality = 100; }
