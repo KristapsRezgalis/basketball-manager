@@ -3796,6 +3796,12 @@ let selectUserYouthCamp = function(selectedCountryIndex){
 	} else {
 		yourYouthCampName.innerHTML = `${userTeam.youthProgram[0]}`;
 	}
+	
+	if(userTeam.youthProgram[1] > 0) {
+		yourYouthCampPoints.innerHTML = `+${userTeam.youthProgram[1]}`
+	} else {
+		yourYouthCampPoints.innerHTML = `0`;
+	}
 }
 
 // opens a modal to see the popularity and player quality of each country in the game
